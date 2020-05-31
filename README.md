@@ -1,0 +1,2 @@
+# mnp.js
+HTTP-MNP,HTTP-FLV,WS-FLV
