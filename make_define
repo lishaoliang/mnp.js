@@ -1,0 +1,113 @@
+﻿# Ubuntu编译环境
+# -------------------------------------------------------------------------------
+# 编译工具链:
+# Arm linux交叉编译: sudo apt install gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
+# STM32交叉编译: sudo apt install gcc-arm-none-eabi
+# Linux编译: sudo apt install gcc g++ build-essential
+# Win交叉编译: sudo apt install mingw-w64
+# Go编译器: sudo apt install golang
+# msvc系列: (_WIN32)
+# emscripten
+# MY_OS/MY_ARCH取值参考: go tool dist list
+# -------------------------------------------------------------------------------
+# Doc文档:
+# sudo apt install doxygen graphviz doxygen-gui
+# 
+
+# go系统目录
+#MY_HOME_GOPATH = /home/lsl/go/
+#MY_WORK_GOPATH = /home/lsl/work/go/
+
+# 
+OS ?= js
+ARCH ?= wasm
+TAGS ?= ""
+
+
+# "linux", "windows", "darwin", "stm32", "js"
+MY_OS := $(OS)
+
+# "amd64", "386", "arm", "wasm"
+MY_ARCH := $(ARCH)
+
+# -tags="debug hi3531dv100"
+MY_GO_TAGS := -tags="$(TAGS)"
+
+ifeq ($(MY_OS), linux)
+	ifeq ($(MY_ARCH), arm)
+		MY_TOOL_CHAIN ?= arm-linux-gnueabi-
+	endif
+
+	MY_CFLAGS +=
+	MY_GO_STATIC  ?= -ldflags -extldflags=-static
+	MY_GCC_STATIC ?= -static
+else ifeq ($(MY_OS), windows)
+	ifeq ($(MY_ARCH), 386)
+		MY_TOOL_CHAIN ?= i686-w64-mingw32-
+	else
+		MY_TOOL_CHAIN ?= x86_64-w64-mingw32-
+	endif
+
+	MY_CFLAGS += -D__WINDOWS__
+	MY_GO_STATIC  ?= -ldflags -extldflags=-static
+	MY_GCC_STATIC ?= -static
+else ifeq ($(MY_OS), darwin)
+	CC ?= clang
+	CXX ?= clang
+	MY_GO_STATIC ?=
+
+	MY_CFLAGS +=
+	MY_GO_STATIC  ?= 
+	MY_GCC_STATIC ?= 
+else ifeq ($(MY_OS), stm32)
+	MY_TOOL_CHAIN ?= arm-none-eabi-
+
+	MY_CFLAGS += -D__STM32__
+	MY_GO_STATIC  ?= 
+	MY_GCC_STATIC ?= -static
+else ifeq ($(MY_OS), js)
+	MY_TOOL_CHAIN ?= 
+
+	MY_CFLAGS += -D__EMSCRIPTEN__
+	MY_GO_STATIC  ?= 
+	MY_GCC_STATIC ?= -static
+else
+	MY_GO_STATIC  ?= -ldflags -extldflags=-static
+	MY_GCC_STATIC ?= -static
+endif
+
+
+# "", "arm-linux-gnueabi-", "arm-none-eabi-"
+MY_TOOL_CHAIN ?= 
+
+# 系统及编译器
+CC				:= $(MY_TOOL_CHAIN)gcc
+CXX				:= $(MY_TOOL_CHAIN)g++
+CAR				:= $(MY_TOOL_CHAIN)ar
+CRANLIB			:= $(MY_TOOL_CHAIN)ranlib
+CSTRIP			:= $(MY_TOOL_CHAIN)strip
+MAKE			:= make
+RM				:= -rm -f
+CP				:= cp
+
+ifeq ($(MY_OS), js)
+CC				= emcc
+CXX				= emcc
+CAR				= llvm-ar
+CRANLIB			= llvm-ranlib
+CSTRIP			= emcc
+endif
+
+
+MY_LIB_NAME	:= lib
+MY_LIB_PATH := ./$(MY_LIB_NAME)
+MY_CFLAGS	+= -D_GNU_SOURCE
+
+
+INSTALL_TOP := /usr/local
+INSTALL_BIN := $(INSTALL_TOP)/bin
+INSTALL_INC := $(INSTALL_TOP)/include
+INSTALL_LIB := $(INSTALL_TOP)/lib
+INSTALL_MAN := $(INSTALL_TOP)/man/man1
+INSTALL_LMOD := $(INSTALL_TOP)/share/lua/$V
+INSTALL_CMOD := $(INSTALL_TOP)/lib/lua/$V

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WS-MNP</title>
+  <body>
+
+    <div>
+      <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 width="960" height="540"></canvas>
+    </div>
+
+    <script type="text/javascript" src="mnp-1.0.0.min.js"></script>
+    <script type='text/javascript'>
+      var Module = mnpjs
+
+      Module.postRun = function() {
+        mnpjs.hello(1000)
+
+        // {"ip"="127.0.0.1","port"=8000,"protocol"="WS-MNP","path"="/stream/wsmnp/chnn0/sidx1"}
+        mnpjs.open('123456', JSON.stringify({
+          ip : window.location.hostname,
+          port : parseInt(window.location.port),
+          protocol : 'WS-MNP',
+          path : '/stream/wsmnp/chnn0/sidx1'
+          }), function(result/*obj*/){
+            console.log('open ' + window.location.hostname + ':' + window.location.port + '/stream/wsmnp/*', result);
+        });
+
+      }
+
+      window.onerror = function(event) {
+      };
+
+      window.onload = function(e){
+      };
+    </script>
+
+  </body>
+</html>

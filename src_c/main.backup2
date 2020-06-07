@@ -1,0 +1,218 @@
+﻿#include "emscripten.h"
+#include <SDL.h>
+#include "SDL/SDL_opengl.h"
+#include "em_util/em_log.h"
+#include "em_util/em_timer.h"
+#include "mem/klb_mem.h"
+
+#include "stdlib.h"
+#include "em_gl/gl_ctx.h"
+#include "em_gl/gl_rgb.h"
+#include "em_gl/gl_yuv.h"
+#include <assert.h>
+#include <string.h>
+
+#include "em_net/em_socket.h"
+#include "em_net/em_socket_manage.h"
+#include "em_net/em_conn_manage.h"
+
+#include "test_res/mnp_h264_res.h"
+#include "test_res/tmem_h264.h"
+
+#include "ff_dec/ffmpeg_dec.h"
+
+EM_JS(void, two_alerts, (), {
+    alert('Hi');
+    alert('Hello');
+});
+
+
+static void cb_main_loop(void);
+
+
+#if 0
+
+int main() {
+    if ( SDL_Init(SDL_INIT_VIDEO) != 0 )
+    {
+        LOG_S("Unable to initialize SDL: %s\n", SDL_GetError());
+        return 1;
+    }
+
+
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    SDL_Surface* p_screen = SDL_SetVideoMode(640, 480, 32, SDL_OPENGL);
+    if (!p_screen) {
+        LOG_S("Unable to set video mode: %s\n", SDL_GetError());
+        return 1;
+    }
+
+    // Set the OpenGL state after creating the context with SDL_SetVideoMode
+
+    glClearColor(0, 0, 0, 0);
+
+    glEnable(GL_TEXTURE_2D); // Needed when we're using the fixed-function pipeline.
+
+    glViewport(0, 0, 640, 480);
+
+    //glMatrixMode(GL_PROJECTION);
+    //glPushMatrix(); // just for testing
+    //glLoadIdentity();
+
+    //glOrtho(0, 640, 480, 0, -1, 1);
+
+    //glMatrixMode(GL_MODELVIEW);
+    //glLoadIdentity();
+
+
+    uint32_t last = em_get_ticks();
+    double now = emscripten_get_now();
+    emscripten_log(EM_LOG_CONSOLE, "123456 : %f, %d", now, last);
+
+    emscripten_set_canvas_size(480, 320);
+
+    int w = 0, h = 0, f = 0;
+    emscripten_get_canvas_size(&w, &h, &f);
+    LOG("canvas size,wh=[%d,%d],full=[%d]", w, h, f);
+
+    LOG("log");
+    LOG_D("log d");
+
+
+    emscripten_set_main_loop(cb_main_loop, 33, 0);
+
+    //SDL_Quit();
+    return 0;
+}
+
+static void cb_main_loop(void)
+{
+    //LOG("cb_main_loop now:%f", emscripten_get_now());
+
+    // Clear the screen before drawing
+
+
+    float r = (float)(rand()) / RAND_MAX;
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(0.5, 0.5, r, 1.0);
+
+
+    SDL_GL_SwapBuffers();
+}
+
+#else
+
+
+static emgl_ctx_t* g_ctx = NULL;
+static emgl_rgb_t* g_rgb = NULL;
+static emgl_yuv_t* g_yuv = NULL;
+
+static em_socket_manage_t* g_socket_manage = NULL;
+static em_conn_manage_t* g_conn_manage = NULL;
+
+static tmem_h264_t* p_tmem = NULL;
+static ffmpeg_dec_t* p_dec = NULL;
+
+int main() {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+    {
+        LOG_S("Unable to initialize SDL: %s\n", SDL_GetError());
+        return 1;
+    }
+
+    ffmpeg_dec_init();
+
+    int w = 640, h = 480;
+    emgl_ctx_init(w, h, 32);
+
+
+    g_ctx = emgl_ctx_create();
+    emgl_ctx_viewport(g_ctx, 0, 0, w, h);
+
+    g_rgb = emgl_rgb_create(w, h);
+    g_yuv = emgl_yuv_create();
+
+    //g_socket_manage = em_socket_manage_create();
+    //g_conn_manage = em_conn_manage_create(g_socket_manage);
+
+    //em_conn_manage_connect(g_conn_manage, NULL, "123456", "127.0.0.1", 8000);
+
+    //em_buf_t* p_buf = em_buf_malloc_ref(1024 * 1024);
+    //memset(p_buf->p_buf, 0x4C, 1024 * 1024);
+    //strcpy((char*)p_buf->p_buf, "123456");
+    //em_buf_set_pos(p_buf, 0, 64 * 1024);
+
+    //em_conn_manage_send(g_conn_manage, "123456", p_buf);
+
+    //em_conn_manage_send_txt(g_conn_manage, "123456", "123456");
+    //em_conn_manage_send_txt(g_conn_manage, "123456", "789654");
+
+    //em_socket_t* p_socket = em_socket_create(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+    //int ret = em_socket_connect(p_socket, "127.0.0.1", 8000);
+    //assert(0 == ret);
+
+    //em_sleep(1000);
+    //em_socket_destroy(p_socket);
+
+    p_tmem = tmem_h264_open(g_res_key_map[0].p_data, g_res_key_map[0].data_len);
+    p_dec = ffmpeg_dec_create(AV_CODEC_ID_H264);
+
+    //for (int i = 0; i < tmem_h264_num(p_tmem); i++)
+    //{
+    //    char* p_h264 = NULL;
+    //    int type = 0;
+
+    //    int len = tmem_h264_get_next(p_tmem, &p_h264, &type, NULL);
+
+    //    AVFrame* p_frame = ffmpeg_dec_decode(p_dec, p_h264, len, i * 3000, i * 3000);
+    //    if( NULL != p_frame)
+    //    {
+    //        LOG("ffmpeg_dec_decode frame: %d, %d", p_frame->width, p_frame->height);
+
+    //        ffmpeg_dec_av_frame_free(p_frame);
+    //    }
+
+    //    //LOG("frame: 0x%p, %d, %d", p_h264, len, type);
+    //}
+
+    //ffmpeg_dec_destroy(p_dec);
+    //tmem_h264_close(p_tmem);
+
+    emscripten_set_main_loop(cb_main_loop, 0, 0);
+
+    //SDL_Quit();
+    return 0;
+}
+
+static void cb_main_loop(void)
+{
+    //LOG("cb_main_loop now:%f", emscripten_get_now());
+
+    //emgl_ctx_begin(g_ctx);
+    //emgl_yuv_draw(g_yuv);
+    //emgl_rgb_draw(g_rgb);
+    //emgl_ctx_end(g_ctx);
+
+    uint32_t now = em_get_ticks();
+    //em_socket_manage_run(g_socket_manage, now);
+
+    char* p_h264 = NULL;
+    int type = 0;
+    int len = tmem_h264_get_next(p_tmem, &p_h264, &type, NULL);
+
+    em_yuv_frame_t* p_yuv = ffmpeg_dec_decode2(p_dec, p_h264, len, now * 3000, now * 3000);
+
+    if( NULL != p_yuv)
+    {
+        emgl_ctx_begin(g_ctx);
+        emgl_yuv_draw(g_yuv, p_yuv);
+        emgl_ctx_end(g_ctx);
+
+        KLB_FREE_BY(p_yuv, ffmpeg_dec_yuv_frame_free);
+    }
+}
+
+#endif

@@ -1,0 +1,14 @@
+prefix=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc
+exec_prefix=${prefix}
+libdir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/lib
+includedir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 57.107.100
+Requires: libavutil >= 55.78.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavcodec -s USE_SDL=2 -s USE_SDL=2 -lm
+Libs.private: 
+Cflags: -I${includedir}

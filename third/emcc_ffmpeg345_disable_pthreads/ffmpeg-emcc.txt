@@ -1,0 +1,67 @@
+++++++++++++++++++++++++++++++++++++++++++++
+ARCH: emcc
+BUILD_ANDROID: --prefix=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc --cc=emcc --enable-cross-compile --target-os=none --arch=x86_64 --cpu=generic --disable-pthreads --disable-asm 
+FFMPEG_CUT: --disable-runtime-cpudetect --disable-debug --disable-logging --disable-swscale-alpha --disable-all --disable-everything --enable-avdevice --enable-avcodec --enable-avformat --enable-swresample --enable-swscale --enable-postproc --enable-avfilter --enable-decoder=h264 --enable-decoder=hevc 
+install prefix            /home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc
+source path               .
+C compiler                emcc
+C library                 
+host C compiler           gcc
+host C library            glibc
+ARCH                      c (generic)
+big-endian                no
+runtime cpu detection     no
+debug symbols             no
+strip symbols             yes
+optimize for size         no
+optimizations             yes
+static                    yes
+shared                    no
+postprocessing support    no
+network support           yes
+threading support         no
+safe bitstream reader     yes
+texi2html enabled         no
+perl enabled              yes
+pod2man enabled           yes
+makeinfo enabled          no
+makeinfo supports HTML    no
+
+External libraries:
+iconv			sdl2			xlib
+
+External libraries providing hardware acceleration:
+
+Libraries:
+avcodec			avformat		swresample
+avdevice		avutil			swscale
+avfilter
+
+Programs:
+
+Enabled decoders:
+h264			hevc
+
+Enabled encoders:
+
+Enabled hwaccels:
+
+Enabled parsers:
+
+Enabled demuxers:
+
+Enabled muxers:
+
+Enabled protocols:
+
+Enabled filters:
+
+Enabled bsfs:
+null
+
+Enabled indevs:
+
+Enabled outdevs:
+
+License: LGPL version 2.1 or later
+Creating configuration files ...

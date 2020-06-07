@@ -1,0 +1,14 @@
+prefix=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc
+exec_prefix=${prefix}
+libdir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/lib
+includedir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/include
+
+Name: libswscale
+Description: FFmpeg image rescaling library
+Version: 4.8.100
+Requires: libavutil >= 55.78.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lswscale -lm
+Libs.private: 
+Cflags: -I${includedir}

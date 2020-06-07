@@ -1,0 +1,1392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src_c">
+      <UniqueIdentifier>{68f43eb4-4a1d-4e62-85c9-38ac8e93f6f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include">
+      <UniqueIdentifier>{79584ce3-192b-4e5a-b86a-09c094bd2459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\AL">
+      <UniqueIdentifier>{79785a90-9d60-4208-b761-0a35f162fdfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\compat">
+      <UniqueIdentifier>{06331042-cb01-42ed-bcd0-e091f2bda4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\EGL">
+      <UniqueIdentifier>{3b34e6fa-e3cb-477e-b4e6-b0e4f29a634b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\emscripten">
+      <UniqueIdentifier>{892162bf-1d56-4e21-950e-c22684453f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc">
+      <UniqueIdentifier>{febf55fc-72f9-43f4-b06d-12cc7b43a6fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\SDL">
+      <UniqueIdentifier>{6e92715f-8a7a-4428-a197-ea39857061ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\compat\sys">
+      <UniqueIdentifier>{9d16db20-230c-44eb-b200-d9e951709149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\arpa">
+      <UniqueIdentifier>{3067a0b0-0d0c-4111-9163-b6605efea751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\bits">
+      <UniqueIdentifier>{52775d94-efe8-44a6-846e-ec7c88d753e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\net">
+      <UniqueIdentifier>{4136c36e-6bbd-43d2-a9ff-ef955eec4982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\netinet">
+      <UniqueIdentifier>{31ddc1ed-95a6-4b7c-bad4-393fede91ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\netpacket">
+      <UniqueIdentifier>{97705d39-f2cd-4059-a7a8-6865cfee7817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\scsi">
+      <UniqueIdentifier>{27ae3277-8e15-4f13-8246-4ecbea623f42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="emcc_include\libc\sys">
+      <UniqueIdentifier>{14c6e009-07fd-4b1d-a5fd-13d7dd665648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{3508bbb8-e857-4339-a0fb-3fcc6f5cb26c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_util">
+      <UniqueIdentifier>{f4c29ea3-9e36-412b-b5df-2eb36dff88e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_fetch">
+      <UniqueIdentifier>{7664eb32-51f5-4fc6-92af-dc1c6eeecfe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\mem">
+      <UniqueIdentifier>{1b7c4716-034d-43c1-a01a-ab906573ffcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\mem">
+      <UniqueIdentifier>{6ba61082-d960-4ca3-be9c-e5b6d4693969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_gl">
+      <UniqueIdentifier>{5f9a33d9-c621-44fe-8e95-6613ab66d3b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_ws">
+      <UniqueIdentifier>{449b7b2a-9436-4cbd-924f-0d9c0c448143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_net">
+      <UniqueIdentifier>{580b8a2c-6f28-418c-8045-1b3b4821f16e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\hash">
+      <UniqueIdentifier>{5602e10e-0da1-49bb-84cd-e6f700d0a534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\list">
+      <UniqueIdentifier>{afb684e8-7faf-4a66-835f-f8a59e2b07ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\hash">
+      <UniqueIdentifier>{6ff28cf4-dbc4-4b4c-a02d-a98b23fe9413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\list">
+      <UniqueIdentifier>{c3dec76e-f295-4d41-94cb-2f370b1bfaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\test_res">
+      <UniqueIdentifier>{6d274345-df97-4c03-970c-9e7fffa99d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\ff_dec">
+      <UniqueIdentifier>{9c03adc0-f538-488e-a71d-4f426381ac34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\main_app">
+      <UniqueIdentifier>{4adba11f-5408-4c90-9581-d9a6aaad49b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\thread">
+      <UniqueIdentifier>{18e39470-8e22-489a-810e-efa4aef7499e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\thread">
+      <UniqueIdentifier>{8ee87652-0fe3-490e-b0eb-bdcdb5463d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\log">
+      <UniqueIdentifier>{89ac7685-f996-46b6-9d23-1f6c636f8d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\mnp">
+      <UniqueIdentifier>{42c21dc2-aeca-4c58-a7a2-5a26ff012891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third">
+      <UniqueIdentifier>{70fce2bc-4980-4401-bcb5-e7b671b612ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third\cJSON">
+      <UniqueIdentifier>{b893f4fb-a5c9-406b-b9b6-01c2de043eb4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\emcc_include\libc\alltypes.h.in">
+      <Filter>emcc_include\libc</Filter>
+    </None>
+    <None Include="..\..\emcc_include\libc\bits\alltypes.h.in">
+      <Filter>emcc_include\libc\bits</Filter>
+    </None>
+    <None Include="..\..\src_c\test_res\mk_res.lua">
+      <Filter>src_c\test_res</Filter>
+    </None>
+    <None Include="..\..\src_c\Makefile">
+      <Filter>src_c</Filter>
+    </None>
+    <None Include="..\..\make_define" />
+    <None Include="..\..\Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch.c">
+      <Filter>src_c\em_fetch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_gl\gl_ctx.c">
+      <Filter>src_c\em_gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_gl\gl_program.c">
+      <Filter>src_c\em_gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_gl\gl_rgb.c">
+      <Filter>src_c\em_gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_gl\gl_yuv.c">
+      <Filter>src_c\em_gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_conn_manage.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_conn_manage_in.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_flv.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_mnp.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_socket.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_net\em_socket_manage.c">
+      <Filter>src_c\em_net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_buf.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_buf_mnp.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_log.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_mnp_avcode.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_pool.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_timer.c">
+      <Filter>src_c\em_util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_ws\em_flv_parser.c">
+      <Filter>src_c\em_ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_ws\em_ws.c">
+      <Filter>src_c\em_ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_ws\em_ws_flv.c">
+      <Filter>src_c\em_ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_ws\em_ws_mnp.c">
+      <Filter>src_c\em_ws</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_manage.c">
+      <Filter>src_c\ff_dec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec.c">
+      <Filter>src_c\ff_dec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_hash.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_hash_dx.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_hash_hgsmi.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_hlist.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_hmap.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\hash\klb_htab.c">
+      <Filter>src_c\hash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\list\klb_list.c">
+      <Filter>src_c\list</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\main_app\app_cmd_json.c">
+      <Filter>src_c\main_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\main_app\main_app.c">
+      <Filter>src_c\main_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\main_app\main_app_interface.c">
+      <Filter>src_c\main_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\main_app\main_app_task.c">
+      <Filter>src_c\main_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\mem\klb_mem.c">
+      <Filter>src_c\mem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\test_res\tmem_h264.c">
+      <Filter>src_c\test_res</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\thread\klb_atomic.c">
+      <Filter>src_c\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\thread\klb_mutex.c">
+      <Filter>src_c\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\thread\klb_rwlock.c">
+      <Filter>src_c\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\thread\klb_spinlock.c">
+      <Filter>src_c\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\thread\klb_thread.c">
+      <Filter>src_c\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\main.c">
+      <Filter>src_c</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third\cJSON-1.7.13\cJSON.c">
+      <Filter>third\cJSON</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_stream.c">
+      <Filter>src_c\em_fetch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_flv.c">
+      <Filter>src_c\em_fetch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_mnp.c">
+      <Filter>src_c\em_fetch</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\emcc_include\AL\al.h">
+      <Filter>emcc_include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\AL\alc.h">
+      <Filter>emcc_include\AL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\sys\socketvar.h">
+      <Filter>emcc_include\compat\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\sys\stat.h">
+      <Filter>emcc_include\compat\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\sys\sysctl.h">
+      <Filter>emcc_include\compat\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\sys\timeb.h">
+      <Filter>emcc_include\compat\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\sys\unistd.h">
+      <Filter>emcc_include\compat\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\ctype.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\malloc.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\math.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\netdb.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\stdarg.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\stdlib.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\string.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\time.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\wchar.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\wctype.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\compat\xlocale.h">
+      <Filter>emcc_include\compat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\EGL\egl.h">
+      <Filter>emcc_include\EGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\EGL\eglext.h">
+      <Filter>emcc_include\EGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\EGL\eglplatform.h">
+      <Filter>emcc_include\EGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\asmfs.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\bind.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\dom_pk_codes.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\em_asm.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\em_js.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\em_macros.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\emmalloc.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\emscripten.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\exports.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\fetch.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\fiber.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\heap.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\html5.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\key_codes.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\posix_socket.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\threading.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\trace.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\val.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\vector.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\vr.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\websocket.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten\wire.h">
+      <Filter>emcc_include\emscripten</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\aio.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\alloca.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ar.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\assert.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\byteswap.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\complex.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\cpio.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\crypt.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ctype.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\dirent.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\dlfcn.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\elf.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\endian.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\err.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\errno.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\fcntl.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\features.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\fenv.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\float.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\fmtmsg.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\fnmatch.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ftw.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\getopt.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\glob.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\grp.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\iconv.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ifaddrs.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\inttypes.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\iso646.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\langinfo.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\lastlog.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\libgen.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\libintl.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\limits.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\link.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\locale.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\malloc.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\math.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\memory.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\mntent.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\monetary.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\mqueue.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netdb.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\nl_types.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\paths.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\poll.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\pthread.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\pty.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\pwd.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\regex.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\resolv.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sched.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\search.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\semaphore.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\setjmp.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\shadow.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\signal.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\spawn.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdalign.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdarg.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdbool.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdc-predef.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stddef.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdint.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdio.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdio_ext.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdlib.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stdnoreturn.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\string.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\strings.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\stropts.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\syscall.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sysexits.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\syslog.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\tar.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\termios.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\tgmath.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\threads.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\time.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\uchar.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ucontext.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\ulimit.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\unistd.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\utime.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\utmp.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\utmpx.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\values.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\wait.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\wchar.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\wctype.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\wordexp.h">
+      <Filter>emcc_include\libc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\ftp.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\inet.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\nameser.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\nameser_compat.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\telnet.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\arpa\tftp.h">
+      <Filter>emcc_include\libc\arpa</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\alltypes.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\endian.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\errno.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\fcntl.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\fenv.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\float.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\io.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\ioctl.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\ipc.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\limits.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\mman.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\msg.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\poll.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\posix.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\reg.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\resource.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\sem.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\setjmp.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\shm.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\signal.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\socket.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\stat.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\statfs.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\stdarg.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\stdint.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\syscall.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\termios.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\bits\user.h">
+      <Filter>emcc_include\libc\bits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\net\ethernet.h">
+      <Filter>emcc_include\libc\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\net\if.h">
+      <Filter>emcc_include\libc\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\net\if_arp.h">
+      <Filter>emcc_include\libc\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\net\route.h">
+      <Filter>emcc_include\libc\net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ether.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\icmp6.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\if_ether.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\igmp.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\in.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\in_systm.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip_icmp.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip6.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\tcp.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netinet\udp.h">
+      <Filter>emcc_include\libc\netinet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\netpacket\packet.h">
+      <Filter>emcc_include\libc\netpacket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\scsi\scsi.h">
+      <Filter>emcc_include\libc\scsi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\scsi\scsi_ioctl.h">
+      <Filter>emcc_include\libc\scsi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\scsi\sg.h">
+      <Filter>emcc_include\libc\scsi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\acct.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\auxv.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\cachectl.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\dir.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\epoll.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\errno.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\eventfd.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\fanotify.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\fcntl.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\file.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\fsuid.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\inotify.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\io.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\ioctl.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\ipc.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\kd.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\klog.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\mman.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\mount.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\msg.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\mtio.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\param.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\personality.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\poll.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\prctl.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\procfs.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\ptrace.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\quota.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\reboot.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\reg.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\resource.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\select.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\sem.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\sendfile.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\shm.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\signal.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\signalfd.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\socket.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\soundcard.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\stat.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\statfs.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\statvfs.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\stropts.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\swap.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\syscall.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\sysinfo.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\syslog.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\sysmacros.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\termios.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\time.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\timeb.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\timerfd.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\times.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\timex.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\ttydefaults.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\types.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\ucontext.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\uio.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\un.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\user.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\utsname.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\vfs.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\vt.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\wait.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\libc\sys\xattr.h">
+      <Filter>emcc_include\libc\sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\begin_code.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\close_code.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_assert.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_atomic.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_audio.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_blendmode.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_clipboard.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_compat.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_android.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_iphoneos.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_macosx.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_minimal.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_nintendods.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_pandora.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_windows.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_wiz.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_copying.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_cpuinfo.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_endian.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_error.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_events.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_gesture.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_gfxPrimitives.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_haptic.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_hints.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_image.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_input.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_joystick.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_keyboard.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_keycode.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_loadso.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_log.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_main.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mixer.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mouse.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mutex.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_name.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengl.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengles.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengles2.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_pixels.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_platform.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_power.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_quit.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rect.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_render.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_revision.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rotozoom.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rwops.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_scancode.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_shape.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_stdinc.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_surface.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_syswm.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_thread.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_timer.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_touch.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_ttf.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_types.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_version.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_video.h">
+      <Filter>emcc_include\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\emcc_include\emscripten.h">
+      <Filter>emcc_include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_hash.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_hash_dx.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_hash_hgsmi.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_hlist.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_hmap.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\hash\klb_htab.h">
+      <Filter>inc\hash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\list\klb_list.h">
+      <Filter>inc\list</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\list\list.h">
+      <Filter>inc\list</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\log\klb_log.h">
+      <Filter>inc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mem\klb_mem.h">
+      <Filter>inc\mem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mnp\klb_mnp.h">
+      <Filter>inc\mnp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_bin.h">
+      <Filter>inc\mnp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_media.h">
+      <Filter>inc\mnp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_stream.h">
+      <Filter>inc\mnp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_txt.h">
+      <Filter>inc\mnp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\thread\klb_atomic.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\thread\klb_mutex.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\thread\klb_rwlock.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\thread\klb_spinlock.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\thread\klb_thread.h">
+      <Filter>inc\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\klb_type.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch.h">
+      <Filter>src_c\em_fetch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_gl\gl_ctx.h">
+      <Filter>src_c\em_gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_gl\gl_program.h">
+      <Filter>src_c\em_gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_gl\gl_rgb.h">
+      <Filter>src_c\em_gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_gl\gl_yuv.h">
+      <Filter>src_c\em_gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_conn_manage.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_conn_manage_in.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_flv.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_mnp.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_socket.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_net\em_socket_manage.h">
+      <Filter>src_c\em_net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_buf.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_buf_mnp.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_log.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_mnp_avcode.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_pool.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_timer.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_yuv_frame.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_ws\em_flv_parser.h">
+      <Filter>src_c\em_ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_ws\em_ws.h">
+      <Filter>src_c\em_ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_ws\em_ws_flv.h">
+      <Filter>src_c\em_ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_ws\em_ws_mnp.h">
+      <Filter>src_c\em_ws</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_manage.h">
+      <Filter>src_c\ff_dec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec.h">
+      <Filter>src_c\ff_dec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\main_app\app_cmd_json.h">
+      <Filter>src_c\main_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\main_app\main_app.h">
+      <Filter>src_c\main_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\main_app\main_app_in.h">
+      <Filter>src_c\main_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\main_app\main_app_task.h">
+      <Filter>src_c\main_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\test_res\mnp_h264_res.h">
+      <Filter>src_c\test_res</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\test_res\tmem_h264.h">
+      <Filter>src_c\test_res</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\third\cJSON-1.7.13\cJSON.h">
+      <Filter>third\cJSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_stream.h">
+      <Filter>src_c\em_fetch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_flv.h">
+      <Filter>src_c\em_fetch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_mnp.h">
+      <Filter>src_c\em_fetch</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\emcc_include\libc\readme.txt">
+      <Filter>emcc_include\libc</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

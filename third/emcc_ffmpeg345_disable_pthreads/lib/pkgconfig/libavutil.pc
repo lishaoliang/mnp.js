@@ -1,0 +1,14 @@
+prefix=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc
+exec_prefix=${prefix}
+libdir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/lib
+includedir=/home/lsl/share/tmp/ffmpeg/src/libs/lib-emcc/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 55.78.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -lm
+Libs.private: 
+Cflags: -I${includedir}

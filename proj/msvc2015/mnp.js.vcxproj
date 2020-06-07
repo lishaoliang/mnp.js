@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\emcc_include\libc\alltypes.h.in" />
+    <None Include="..\..\emcc_include\libc\bits\alltypes.h.in" />
+    <None Include="..\..\Makefile" />
+    <None Include="..\..\make_define" />
+    <None Include="..\..\src_c\Makefile" />
+    <None Include="..\..\src_c\test_res\mk_res.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch.c" />
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_flv.c" />
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_mnp.c" />
+    <ClCompile Include="..\..\src_c\em_fetch\em_fetch_stream.c" />
+    <ClCompile Include="..\..\src_c\em_gl\gl_ctx.c" />
+    <ClCompile Include="..\..\src_c\em_gl\gl_program.c" />
+    <ClCompile Include="..\..\src_c\em_gl\gl_rgb.c" />
+    <ClCompile Include="..\..\src_c\em_gl\gl_yuv.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_conn_manage.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_conn_manage_in.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_flv.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_mnp.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_socket.c" />
+    <ClCompile Include="..\..\src_c\em_net\em_socket_manage.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_buf.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_buf_mnp.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_log.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_mnp_avcode.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_pool.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_timer.c" />
+    <ClCompile Include="..\..\src_c\em_ws\em_flv_parser.c" />
+    <ClCompile Include="..\..\src_c\em_ws\em_ws.c" />
+    <ClCompile Include="..\..\src_c\em_ws\em_ws_flv.c" />
+    <ClCompile Include="..\..\src_c\em_ws\em_ws_mnp.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_manage.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_hash.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_hash_dx.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_hash_hgsmi.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_hlist.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_hmap.c" />
+    <ClCompile Include="..\..\src_c\hash\klb_htab.c" />
+    <ClCompile Include="..\..\src_c\list\klb_list.c" />
+    <ClCompile Include="..\..\src_c\main.c" />
+    <ClCompile Include="..\..\src_c\main_app\app_cmd_json.c" />
+    <ClCompile Include="..\..\src_c\main_app\main_app.c" />
+    <ClCompile Include="..\..\src_c\main_app\main_app_interface.c" />
+    <ClCompile Include="..\..\src_c\main_app\main_app_task.c" />
+    <ClCompile Include="..\..\src_c\mem\klb_mem.c" />
+    <ClCompile Include="..\..\src_c\test_res\tmem_h264.c" />
+    <ClCompile Include="..\..\src_c\thread\klb_atomic.c" />
+    <ClCompile Include="..\..\src_c\thread\klb_mutex.c" />
+    <ClCompile Include="..\..\src_c\thread\klb_rwlock.c" />
+    <ClCompile Include="..\..\src_c\thread\klb_spinlock.c" />
+    <ClCompile Include="..\..\src_c\thread\klb_thread.c" />
+    <ClCompile Include="..\..\third\cJSON-1.7.13\cJSON.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\emcc_include\AL\al.h" />
+    <ClInclude Include="..\..\emcc_include\AL\alc.h" />
+    <ClInclude Include="..\..\emcc_include\compat\ctype.h" />
+    <ClInclude Include="..\..\emcc_include\compat\malloc.h" />
+    <ClInclude Include="..\..\emcc_include\compat\math.h" />
+    <ClInclude Include="..\..\emcc_include\compat\netdb.h" />
+    <ClInclude Include="..\..\emcc_include\compat\stdarg.h" />
+    <ClInclude Include="..\..\emcc_include\compat\stdlib.h" />
+    <ClInclude Include="..\..\emcc_include\compat\string.h" />
+    <ClInclude Include="..\..\emcc_include\compat\sys\socketvar.h" />
+    <ClInclude Include="..\..\emcc_include\compat\sys\stat.h" />
+    <ClInclude Include="..\..\emcc_include\compat\sys\sysctl.h" />
+    <ClInclude Include="..\..\emcc_include\compat\sys\timeb.h" />
+    <ClInclude Include="..\..\emcc_include\compat\sys\unistd.h" />
+    <ClInclude Include="..\..\emcc_include\compat\time.h" />
+    <ClInclude Include="..\..\emcc_include\compat\wchar.h" />
+    <ClInclude Include="..\..\emcc_include\compat\wctype.h" />
+    <ClInclude Include="..\..\emcc_include\compat\xlocale.h" />
+    <ClInclude Include="..\..\emcc_include\EGL\egl.h" />
+    <ClInclude Include="..\..\emcc_include\EGL\eglext.h" />
+    <ClInclude Include="..\..\emcc_include\EGL\eglplatform.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\asmfs.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\bind.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\dom_pk_codes.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\emmalloc.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\emscripten.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\em_asm.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\em_js.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\em_macros.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\exports.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\fetch.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\fiber.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\heap.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\html5.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\key_codes.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\posix_socket.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\threading.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\trace.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\val.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\vector.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\vr.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\websocket.h" />
+    <ClInclude Include="..\..\emcc_include\emscripten\wire.h" />
+    <ClInclude Include="..\..\emcc_include\libc\aio.h" />
+    <ClInclude Include="..\..\emcc_include\libc\alloca.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ar.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\ftp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\inet.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\nameser.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\nameser_compat.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\telnet.h" />
+    <ClInclude Include="..\..\emcc_include\libc\arpa\tftp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\assert.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\alltypes.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\endian.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\errno.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\fcntl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\fenv.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\float.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\io.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\ioctl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\ipc.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\limits.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\mman.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\msg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\poll.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\posix.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\reg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\resource.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\sem.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\setjmp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\shm.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\signal.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\socket.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\stat.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\statfs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\stdarg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\stdint.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\syscall.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\termios.h" />
+    <ClInclude Include="..\..\emcc_include\libc\bits\user.h" />
+    <ClInclude Include="..\..\emcc_include\libc\byteswap.h" />
+    <ClInclude Include="..\..\emcc_include\libc\complex.h" />
+    <ClInclude Include="..\..\emcc_include\libc\cpio.h" />
+    <ClInclude Include="..\..\emcc_include\libc\crypt.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ctype.h" />
+    <ClInclude Include="..\..\emcc_include\libc\dirent.h" />
+    <ClInclude Include="..\..\emcc_include\libc\dlfcn.h" />
+    <ClInclude Include="..\..\emcc_include\libc\elf.h" />
+    <ClInclude Include="..\..\emcc_include\libc\endian.h" />
+    <ClInclude Include="..\..\emcc_include\libc\err.h" />
+    <ClInclude Include="..\..\emcc_include\libc\errno.h" />
+    <ClInclude Include="..\..\emcc_include\libc\fcntl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\features.h" />
+    <ClInclude Include="..\..\emcc_include\libc\fenv.h" />
+    <ClInclude Include="..\..\emcc_include\libc\float.h" />
+    <ClInclude Include="..\..\emcc_include\libc\fmtmsg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\fnmatch.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ftw.h" />
+    <ClInclude Include="..\..\emcc_include\libc\getopt.h" />
+    <ClInclude Include="..\..\emcc_include\libc\glob.h" />
+    <ClInclude Include="..\..\emcc_include\libc\grp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\iconv.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ifaddrs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\inttypes.h" />
+    <ClInclude Include="..\..\emcc_include\libc\iso646.h" />
+    <ClInclude Include="..\..\emcc_include\libc\langinfo.h" />
+    <ClInclude Include="..\..\emcc_include\libc\lastlog.h" />
+    <ClInclude Include="..\..\emcc_include\libc\libgen.h" />
+    <ClInclude Include="..\..\emcc_include\libc\libintl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\limits.h" />
+    <ClInclude Include="..\..\emcc_include\libc\link.h" />
+    <ClInclude Include="..\..\emcc_include\libc\locale.h" />
+    <ClInclude Include="..\..\emcc_include\libc\malloc.h" />
+    <ClInclude Include="..\..\emcc_include\libc\math.h" />
+    <ClInclude Include="..\..\emcc_include\libc\memory.h" />
+    <ClInclude Include="..\..\emcc_include\libc\mntent.h" />
+    <ClInclude Include="..\..\emcc_include\libc\monetary.h" />
+    <ClInclude Include="..\..\emcc_include\libc\mqueue.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netdb.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ether.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\icmp6.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\if_ether.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\igmp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\in.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\in_systm.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip6.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\ip_icmp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\tcp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netinet\udp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\netpacket\packet.h" />
+    <ClInclude Include="..\..\emcc_include\libc\net\ethernet.h" />
+    <ClInclude Include="..\..\emcc_include\libc\net\if.h" />
+    <ClInclude Include="..\..\emcc_include\libc\net\if_arp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\net\route.h" />
+    <ClInclude Include="..\..\emcc_include\libc\nl_types.h" />
+    <ClInclude Include="..\..\emcc_include\libc\paths.h" />
+    <ClInclude Include="..\..\emcc_include\libc\poll.h" />
+    <ClInclude Include="..\..\emcc_include\libc\pthread.h" />
+    <ClInclude Include="..\..\emcc_include\libc\pty.h" />
+    <ClInclude Include="..\..\emcc_include\libc\pwd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\regex.h" />
+    <ClInclude Include="..\..\emcc_include\libc\resolv.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sched.h" />
+    <ClInclude Include="..\..\emcc_include\libc\scsi\scsi.h" />
+    <ClInclude Include="..\..\emcc_include\libc\scsi\scsi_ioctl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\scsi\sg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\search.h" />
+    <ClInclude Include="..\..\emcc_include\libc\semaphore.h" />
+    <ClInclude Include="..\..\emcc_include\libc\setjmp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\shadow.h" />
+    <ClInclude Include="..\..\emcc_include\libc\signal.h" />
+    <ClInclude Include="..\..\emcc_include\libc\spawn.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdalign.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdarg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdbool.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdc-predef.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stddef.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdint.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdio.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdio_ext.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdlib.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stdnoreturn.h" />
+    <ClInclude Include="..\..\emcc_include\libc\string.h" />
+    <ClInclude Include="..\..\emcc_include\libc\strings.h" />
+    <ClInclude Include="..\..\emcc_include\libc\stropts.h" />
+    <ClInclude Include="..\..\emcc_include\libc\syscall.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sysexits.h" />
+    <ClInclude Include="..\..\emcc_include\libc\syslog.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\acct.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\auxv.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\cachectl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\dir.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\epoll.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\errno.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\eventfd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\fanotify.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\fcntl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\file.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\fsuid.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\inotify.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\io.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\ioctl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\ipc.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\kd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\klog.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\mman.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\mount.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\msg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\mtio.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\param.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\personality.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\poll.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\prctl.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\procfs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\ptrace.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\quota.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\reboot.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\reg.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\resource.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\select.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\sem.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\sendfile.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\shm.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\signal.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\signalfd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\socket.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\soundcard.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\stat.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\statfs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\statvfs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\stropts.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\swap.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\syscall.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\sysinfo.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\syslog.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\sysmacros.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\termios.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\time.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\timeb.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\timerfd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\times.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\timex.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\ttydefaults.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\types.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\ucontext.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\uio.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\un.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\user.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\utsname.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\vfs.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\vt.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\wait.h" />
+    <ClInclude Include="..\..\emcc_include\libc\sys\xattr.h" />
+    <ClInclude Include="..\..\emcc_include\libc\tar.h" />
+    <ClInclude Include="..\..\emcc_include\libc\termios.h" />
+    <ClInclude Include="..\..\emcc_include\libc\tgmath.h" />
+    <ClInclude Include="..\..\emcc_include\libc\threads.h" />
+    <ClInclude Include="..\..\emcc_include\libc\time.h" />
+    <ClInclude Include="..\..\emcc_include\libc\uchar.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ucontext.h" />
+    <ClInclude Include="..\..\emcc_include\libc\ulimit.h" />
+    <ClInclude Include="..\..\emcc_include\libc\unistd.h" />
+    <ClInclude Include="..\..\emcc_include\libc\utime.h" />
+    <ClInclude Include="..\..\emcc_include\libc\utmp.h" />
+    <ClInclude Include="..\..\emcc_include\libc\utmpx.h" />
+    <ClInclude Include="..\..\emcc_include\libc\values.h" />
+    <ClInclude Include="..\..\emcc_include\libc\wait.h" />
+    <ClInclude Include="..\..\emcc_include\libc\wchar.h" />
+    <ClInclude Include="..\..\emcc_include\libc\wctype.h" />
+    <ClInclude Include="..\..\emcc_include\libc\wordexp.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\begin_code.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\close_code.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_assert.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_atomic.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_audio.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_blendmode.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_clipboard.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_compat.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_android.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_iphoneos.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_macosx.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_minimal.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_nintendods.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_pandora.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_windows.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_config_wiz.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_copying.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_cpuinfo.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_endian.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_error.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_events.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_gesture.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_gfxPrimitives.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_haptic.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_hints.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_image.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_input.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_joystick.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_keyboard.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_keycode.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_loadso.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_log.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_main.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mixer.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mouse.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_mutex.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_name.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengl.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengles.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_opengles2.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_pixels.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_platform.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_power.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_quit.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rect.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_render.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_revision.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rotozoom.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_rwops.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_scancode.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_shape.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_stdinc.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_surface.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_syswm.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_thread.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_timer.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_touch.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_ttf.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_types.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_version.h" />
+    <ClInclude Include="..\..\emcc_include\SDL\SDL_video.h" />
+    <ClInclude Include="..\..\inc\hash\klb_hash.h" />
+    <ClInclude Include="..\..\inc\hash\klb_hash_dx.h" />
+    <ClInclude Include="..\..\inc\hash\klb_hash_hgsmi.h" />
+    <ClInclude Include="..\..\inc\hash\klb_hlist.h" />
+    <ClInclude Include="..\..\inc\hash\klb_hmap.h" />
+    <ClInclude Include="..\..\inc\hash\klb_htab.h" />
+    <ClInclude Include="..\..\inc\klb_type.h" />
+    <ClInclude Include="..\..\inc\list\klb_list.h" />
+    <ClInclude Include="..\..\inc\list\list.h" />
+    <ClInclude Include="..\..\inc\log\klb_log.h" />
+    <ClInclude Include="..\..\inc\mem\klb_mem.h" />
+    <ClInclude Include="..\..\inc\mnp\klb_mnp.h" />
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_bin.h" />
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_media.h" />
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_stream.h" />
+    <ClInclude Include="..\..\inc\mnp\klb_mnp_txt.h" />
+    <ClInclude Include="..\..\inc\thread\klb_atomic.h" />
+    <ClInclude Include="..\..\inc\thread\klb_mutex.h" />
+    <ClInclude Include="..\..\inc\thread\klb_rwlock.h" />
+    <ClInclude Include="..\..\inc\thread\klb_spinlock.h" />
+    <ClInclude Include="..\..\inc\thread\klb_thread.h" />
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch.h" />
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_flv.h" />
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_mnp.h" />
+    <ClInclude Include="..\..\src_c\em_fetch\em_fetch_stream.h" />
+    <ClInclude Include="..\..\src_c\em_gl\gl_ctx.h" />
+    <ClInclude Include="..\..\src_c\em_gl\gl_program.h" />
+    <ClInclude Include="..\..\src_c\em_gl\gl_rgb.h" />
+    <ClInclude Include="..\..\src_c\em_gl\gl_yuv.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_conn_manage.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_conn_manage_in.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_flv.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_mnp.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_socket.h" />
+    <ClInclude Include="..\..\src_c\em_net\em_socket_manage.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_buf.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_buf_mnp.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_log.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_mnp_avcode.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_pool.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_timer.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_yuv_frame.h" />
+    <ClInclude Include="..\..\src_c\em_ws\em_flv_parser.h" />
+    <ClInclude Include="..\..\src_c\em_ws\em_ws.h" />
+    <ClInclude Include="..\..\src_c\em_ws\em_ws_flv.h" />
+    <ClInclude Include="..\..\src_c\em_ws\em_ws_mnp.h" />
+    <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec.h" />
+    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_manage.h" />
+    <ClInclude Include="..\..\src_c\main_app\app_cmd_json.h" />
+    <ClInclude Include="..\..\src_c\main_app\main_app.h" />
+    <ClInclude Include="..\..\src_c\main_app\main_app_in.h" />
+    <ClInclude Include="..\..\src_c\main_app\main_app_task.h" />
+    <ClInclude Include="..\..\src_c\test_res\mnp_h264_res.h" />
+    <ClInclude Include="..\..\src_c\test_res\tmem_h264.h" />
+    <ClInclude Include="..\..\third\cJSON-1.7.13\cJSON.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\emcc_include\libc\readme.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3CF74A1-BCFC-4709-8955-6C9BFE7E25C4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mnpjs</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
