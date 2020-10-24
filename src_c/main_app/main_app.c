@@ -1,19 +1,21 @@
 ﻿#include "main_app.h"
 #include "main_app_in.h"
 #include "mem/klb_mem.h"
-#include "test_res/tmem_h264.h"
-#include "test_res/mnp_h264_res.h"
-#include "em_net/em_socket_manage.h"
-#include "em_net/em_conn_manage.h"
-#include "ff_dec/ff_dec_manage.h"
-#include "em_util/em_buf_mnp.h"
-#include "em_util/em_log.h"
-#include "em_gl/gl_ctx.h"
-#include "em_gl/gl_yuv.h"
+#include "em_socket_manage.h"
+#include "em_conn_manage.h"
+#include "ff_dec_single.h"
+#include "em_buf_mnp.h"
+#include "em_log.h"
+#include "gl_ctx.h"
+#include "gl_yuv.h"
 #include "emscripten/em_asm.h"
 #include "libavcodec/avcodec.h"
-#include "em_ws/em_ws.h"
+#include "em_ws.h"
+#include "em_audio_ctx.h"
 #include <assert.h>
+
+
+extern bool g_main_hidden;
 
 
 main_app_t* main_app_create()
@@ -27,10 +29,11 @@ main_app_t* main_app_create()
     p_app->p_gl_ctx = emgl_ctx_create();
     p_app->p_gl_yuv = emgl_yuv_create();
 
-    p_app->p_dec_manage = ff_dec_manage_create();
+    p_app->p_dec_manage = ff_dec_single_create();
 
+#if 0
     p_app->p_tmem_h264 = tmem_h264_open(g_res_key_map[0].p_data, g_res_key_map[0].data_len);
-
+#endif
 
     p_app->p_open_task = main_app_task_create();
     p_app->p_request_task = main_app_task_create();
@@ -45,8 +48,11 @@ void main_app_destroy(main_app_t* p_app)
     KLB_FREE_BY(p_app->p_request_task, main_app_task_destroy);
     KLB_FREE_BY(p_app->p_open_task, main_app_task_destroy);
 
+#if 0
     KLB_FREE_BY(p_app->p_tmem_h264, tmem_h264_close);
-    KLB_FREE_BY(p_app->p_dec_manage, ff_dec_manage_destroy);
+#endif
+
+    KLB_FREE_BY(p_app->p_dec_manage, ff_dec_single_destroy);
 
     KLB_FREE_BY(p_app->p_gl_yuv, emgl_yuv_destroy);
     KLB_FREE_BY(p_app->p_gl_ctx, emgl_ctx_destroy);
@@ -61,7 +67,7 @@ int main_app_start(main_app_t* p_app)
     assert(NULL != p_app);
     // 开启工作线程
 
-    int ret = ff_dec_manage_start(p_app->p_dec_manage);
+    int ret = ff_dec_single_start(p_app->p_dec_manage);
 
     return ret;
 }
@@ -70,9 +76,10 @@ void main_app_stop(main_app_t* p_app)
 {
     assert(NULL != p_app);
 
-    ff_dec_manage_stop(p_app->p_dec_manage);
+    ff_dec_single_stop(p_app->p_dec_manage);
 }
 
+#if 0
 static void main_app_push_test_h264(main_app_t* p_app, uint32_t now_ticks)
 {
     if (ABS_SUB(p_app->last_tc, now_ticks) < 33)
@@ -94,6 +101,7 @@ static void main_app_push_test_h264(main_app_t* p_app, uint32_t now_ticks)
         //ff_dec_manage_push(p_app->p_dec_manage, AV_CODEC_ID_H264, p_data, h264_len, now_ticks, now_ticks);
     }
 }
+#endif
 
 static int callback_mnpjs(int id, int status)
 {
@@ -114,7 +122,7 @@ static int callback_mnpjs(int id, int status)
     return 0;
 }
 
-static void main_app_text(main_app_t* p_app, uint32_t now_ticks)
+static void main_app_text(main_app_t* p_app, int64_t now_ticks)
 {
     while (true)
     {
@@ -128,7 +136,7 @@ static void main_app_text(main_app_t* p_app, uint32_t now_ticks)
         {
             if (0 == code)
             {
-                klb_mnp_txt_t mnp_txt = { 0 };
+                klb_mnp_common_t mnp_txt = { 0 };
                 char* p_data = NULL;
                 int data_len = 0;
 
@@ -163,14 +171,14 @@ static void main_app_text(main_app_t* p_app, uint32_t now_ticks)
     }
 }
 
-static void main_app_stream(main_app_t* p_app, uint32_t now_ticks)
+static void main_app_stream(main_app_t* p_app, int64_t now_ticks)
 {
     while (true)
     {
         em_buf_t* p_buf = NULL;
         if (0 == em_conn_manage_recv_md(p_app->p_conn_manage, NULL, NULL, &p_buf))
         {
-            ff_dec_manage_push(p_app->p_dec_manage, p_buf);
+            ff_dec_single_push(p_app->p_dec_manage, p_buf);
         }
         else
         {
@@ -179,7 +187,7 @@ static void main_app_stream(main_app_t* p_app, uint32_t now_ticks)
     }
 }
 
-int main_app_run(main_app_t* p_app, uint32_t now_ticks)
+int main_app_run(main_app_t* p_app, int64_t now_ticks)
 {
     assert(NULL != p_app);
     // 直接使用主线程干活: 必须非柱塞方式, 且耗时不能太长, 保证主线程流畅
@@ -199,20 +207,35 @@ int main_app_run(main_app_t* p_app, uint32_t now_ticks)
 
 
     // 运行解码过程
-    ff_dec_manage_run(p_app->p_dec_manage, now_ticks);
+    ff_dec_single_run(p_app->p_dec_manage, now_ticks, g_main_hidden);
 
 
-    // 显示
+    // 消费视频,音频数据
     while (true)
     {
-        em_yuv_frame_t* p_yuv = ff_dec_manage_get(p_app->p_dec_manage);
-        if (NULL != p_yuv)
+        em_frame_yuv_wav_t* p_frame = ff_dec_single_get(p_app->p_dec_manage, now_ticks);
+        if (NULL != p_frame)
         {
-            emgl_ctx_begin(p_app->p_gl_ctx);
-            emgl_yuv_draw(p_app->p_gl_yuv, p_yuv);
-            emgl_ctx_end(p_app->p_gl_ctx);
+            bool b_free_frame = true;
+            if (!g_main_hidden)
+            {
+                if (EM_FRAME_TYPE_YUV == p_frame->type)
+                {
+                    emgl_ctx_begin(p_app->p_gl_ctx);
+                    emgl_yuv_draw(p_app->p_gl_yuv, p_frame);
+                    emgl_ctx_end(p_app->p_gl_ctx);
+                }
+                else if (EM_FRAME_TYPE_WAV == p_frame->type)
+                {
+                    em_audio_ctx_push(p_frame);
+                    b_free_frame = false;
+                }
+            }
 
-            ff_dec_manage_free(p_yuv);
+            if (b_free_frame)
+            {
+                ff_dec_single_free(p_frame);
+            }
         }
         else
         {

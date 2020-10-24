@@ -23,10 +23,17 @@
     <None Include="..\..\emcc_include\libc\bits\alltypes.h.in" />
     <None Include="..\..\Makefile" />
     <None Include="..\..\make_define" />
-    <None Include="..\..\src_c\Makefile" />
+    <None Include="..\..\src\libmnp.js" />
+    <None Include="..\..\src\libmnpfetch.js" />
+    <None Include="..\..\src\libmnputil.js" />
+    <None Include="..\..\src\libmnpxhr.js" />
     <None Include="..\..\src_c\test_res\mk_res.lua" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src_c\demux\em_flv_demux.c" />
+    <ClCompile Include="..\..\src_c\demux\em_flv_parser.c" />
+    <ClCompile Include="..\..\src_c\demux\em_mnp_demux.c" />
+    <ClCompile Include="..\..\src_c\em_audio\em_audio_ctx.c" />
     <ClCompile Include="..\..\src_c\em_fetch\em_fetch.c" />
     <ClCompile Include="..\..\src_c\em_fetch\em_fetch_flv.c" />
     <ClCompile Include="..\..\src_c\em_fetch\em_fetch_mnp.c" />
@@ -37,22 +44,28 @@
     <ClCompile Include="..\..\src_c\em_gl\gl_yuv.c" />
     <ClCompile Include="..\..\src_c\em_net\em_conn_manage.c" />
     <ClCompile Include="..\..\src_c\em_net\em_conn_manage_in.c" />
-    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_flv.c" />
-    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_mnp.c" />
     <ClCompile Include="..\..\src_c\em_net\em_socket.c" />
     <ClCompile Include="..\..\src_c\em_net\em_socket_manage.c" />
     <ClCompile Include="..\..\src_c\em_util\em_buf.c" />
     <ClCompile Include="..\..\src_c\em_util\em_buf_mnp.c" />
+    <ClCompile Include="..\..\src_c\em_util\em_frame_yuv_wav.c" />
     <ClCompile Include="..\..\src_c\em_util\em_log.c" />
     <ClCompile Include="..\..\src_c\em_util\em_mnp_avcode.c" />
     <ClCompile Include="..\..\src_c\em_util\em_pool.c" />
     <ClCompile Include="..\..\src_c\em_util\em_timer.c" />
-    <ClCompile Include="..\..\src_c\em_ws\em_flv_parser.c" />
     <ClCompile Include="..\..\src_c\em_ws\em_ws.c" />
     <ClCompile Include="..\..\src_c\em_ws\em_ws_flv.c" />
     <ClCompile Include="..\..\src_c\em_ws\em_ws_mnp.c" />
     <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec.c" />
-    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_manage.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec_audio.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_single.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_high.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_higher.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_low.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_lower.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_lowest.c" />
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_middle.c" />
     <ClCompile Include="..\..\src_c\hash\klb_hash.c" />
     <ClCompile Include="..\..\src_c\hash\klb_hash_dx.c" />
     <ClCompile Include="..\..\src_c\hash\klb_hash_hgsmi.c" />
@@ -66,6 +79,7 @@
     <ClCompile Include="..\..\src_c\main_app\main_app_interface.c" />
     <ClCompile Include="..\..\src_c\main_app\main_app_task.c" />
     <ClCompile Include="..\..\src_c\mem\klb_mem.c" />
+    <ClCompile Include="..\..\src_c\test_res\tmem_flv.c" />
     <ClCompile Include="..\..\src_c\test_res\tmem_h264.c" />
     <ClCompile Include="..\..\src_c\thread\klb_atomic.c" />
     <ClCompile Include="..\..\src_c\thread\klb_mutex.c" />
@@ -403,15 +417,18 @@
     <ClInclude Include="..\..\inc\log\klb_log.h" />
     <ClInclude Include="..\..\inc\mem\klb_mem.h" />
     <ClInclude Include="..\..\inc\mnp\klb_mnp.h" />
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_bin.h" />
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_media.h" />
     <ClInclude Include="..\..\inc\mnp\klb_mnp_stream.h" />
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_txt.h" />
     <ClInclude Include="..\..\inc\thread\klb_atomic.h" />
     <ClInclude Include="..\..\inc\thread\klb_mutex.h" />
     <ClInclude Include="..\..\inc\thread\klb_rwlock.h" />
     <ClInclude Include="..\..\inc\thread\klb_spinlock.h" />
     <ClInclude Include="..\..\inc\thread\klb_thread.h" />
+    <ClInclude Include="..\..\src\libmnpfetch.h" />
+    <ClInclude Include="..\..\src\libmnpxhr.h" />
+    <ClInclude Include="..\..\src_c\demux\em_flv_demux.h" />
+    <ClInclude Include="..\..\src_c\demux\em_flv_parser.h" />
+    <ClInclude Include="..\..\src_c\demux\em_mnp_demux.h" />
+    <ClInclude Include="..\..\src_c\em_audio\em_audio_ctx.h" />
     <ClInclude Include="..\..\src_c\em_fetch\em_fetch.h" />
     <ClInclude Include="..\..\src_c\em_fetch\em_fetch_flv.h" />
     <ClInclude Include="..\..\src_c\em_fetch\em_fetch_mnp.h" />
@@ -422,28 +439,28 @@
     <ClInclude Include="..\..\src_c\em_gl\gl_yuv.h" />
     <ClInclude Include="..\..\src_c\em_net\em_conn_manage.h" />
     <ClInclude Include="..\..\src_c\em_net\em_conn_manage_in.h" />
-    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_flv.h" />
-    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_mnp.h" />
     <ClInclude Include="..\..\src_c\em_net\em_socket.h" />
     <ClInclude Include="..\..\src_c\em_net\em_socket_manage.h" />
     <ClInclude Include="..\..\src_c\em_util\em_buf.h" />
     <ClInclude Include="..\..\src_c\em_util\em_buf_mnp.h" />
+    <ClInclude Include="..\..\src_c\em_util\em_frame_yuv_wav.h" />
     <ClInclude Include="..\..\src_c\em_util\em_log.h" />
     <ClInclude Include="..\..\src_c\em_util\em_mnp_avcode.h" />
     <ClInclude Include="..\..\src_c\em_util\em_pool.h" />
     <ClInclude Include="..\..\src_c\em_util\em_timer.h" />
-    <ClInclude Include="..\..\src_c\em_util\em_yuv_frame.h" />
-    <ClInclude Include="..\..\src_c\em_ws\em_flv_parser.h" />
     <ClInclude Include="..\..\src_c\em_ws\em_ws.h" />
     <ClInclude Include="..\..\src_c\em_ws\em_ws_flv.h" />
     <ClInclude Include="..\..\src_c\em_ws\em_ws_mnp.h" />
     <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec.h" />
-    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_manage.h" />
+    <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec_audio.h" />
+    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_single.h" />
+    <ClInclude Include="..\..\src_c\ff_dec\ff_rate_ctrl.h" />
     <ClInclude Include="..\..\src_c\main_app\app_cmd_json.h" />
     <ClInclude Include="..\..\src_c\main_app\main_app.h" />
     <ClInclude Include="..\..\src_c\main_app\main_app_in.h" />
     <ClInclude Include="..\..\src_c\main_app\main_app_task.h" />
     <ClInclude Include="..\..\src_c\test_res\mnp_h264_res.h" />
+    <ClInclude Include="..\..\src_c\test_res\tmem_flv.h" />
     <ClInclude Include="..\..\src_c\test_res\tmem_h264.h" />
     <ClInclude Include="..\..\third\cJSON-1.7.13\cJSON.h" />
   </ItemGroup>
@@ -509,7 +526,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src;..\..\src_c;..\..\third\emcc_ffmpeg345_disable_pthreads\include;..\..\third\cJSON-1.7.13;..\..\src_c\em_fetch;..\..\src_c\em_gl;..\..\src_c\em_net;..\..\src_c\em_util;..\..\src_c\em_ws;..\..\src_c\em_audio;..\..\src_c\ff_dec;..\..\src_c\main_app;..\..\src_c\demux;..\..\src_c\test_res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -522,7 +539,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src;..\..\src_c;..\..\third\emcc_ffmpeg345_disable_pthreads\include;..\..\third\cJSON-1.7.13;..\..\src_c\em_fetch;..\..\src_c\em_gl;..\..\src_c\em_net;..\..\src_c\em_util;..\..\src_c\em_ws;..\..\src_c\em_audio;..\..\src_c\ff_dec;..\..\src_c\main_app;..\..\src_c\demux;..\..\src_c\test_res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -537,7 +554,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src;..\..\src_c;..\..\third\emcc_ffmpeg345_disable_pthreads\include;..\..\third\cJSON-1.7.13;..\..\src_c\em_fetch;..\..\src_c\em_gl;..\..\src_c\em_net;..\..\src_c\em_util;..\..\src_c\em_ws;..\..\src_c\em_audio;..\..\src_c\ff_dec;..\..\src_c\main_app;..\..\src_c\demux;..\..\src_c\test_res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -554,7 +571,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_LIB;__EMSCRIPTEN__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src_c;..\..\third\lib_ffmpeg345_emcc\include;..\..\third\cJSON-1.7.13;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\emcc_include;..\..\emcc_include\emscripten;..\..\emcc_include\libc;..\..\emcc_include\SDL;..\..\inc;..\..\src;..\..\src_c;..\..\third\emcc_ffmpeg345_disable_pthreads\include;..\..\third\cJSON-1.7.13;..\..\src_c\em_fetch;..\..\src_c\em_gl;..\..\src_c\em_net;..\..\src_c\em_util;..\..\src_c\em_ws;..\..\src_c\em_audio;..\..\src_c\ff_dec;..\..\src_c\main_app;..\..\src_c\demux;..\..\src_c\test_res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

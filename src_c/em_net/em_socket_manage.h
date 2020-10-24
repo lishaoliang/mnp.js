@@ -27,7 +27,7 @@ typedef struct em_socket_manage_t_ em_socket_manage_t;
 em_socket_manage_t* em_socket_manage_create();
 void em_socket_manage_destroy(em_socket_manage_t* p_manage);
 
-int em_socket_manage_run(em_socket_manage_t* p_manage, uint32_t now_ticks);
+int em_socket_manage_run(em_socket_manage_t* p_manage, int64_t now_ticks);
 
 int em_socket_manage_push(em_socket_manage_t* p_manage, const void* p_key, uint32_t key_len, em_socket_t* p_socket);
 int em_socket_manage_push_ws(em_socket_manage_t* p_manage, const void* p_key, uint32_t key_len, emws_socket_t* p_emws);

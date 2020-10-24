@@ -21,24 +21,17 @@ extern "C" {
 
 #define APP_CMD_STR_LEN     64
 #define APP_CMD_STR_BUF     68
-#define APP_CMD_PATH_LEN    1024
-#define APP_CMD_PATH_BUF    1028
 
 
 typedef struct app_cmd_open_t_
 {
-    int     port;
-
-    char    ip[APP_CMD_STR_BUF];
     char    protocol[APP_CMD_STR_BUF];
-    char    path[APP_CMD_PATH_BUF];
-
-    //char    username[APP_CMD_STR_BUF];
-    //char    passwd[APP_CMD_STR_BUF];
+    char*   p_url;
 }app_cmd_open_t;
 
 
-int app_cmd_parse_open(app_cmd_open_t* p_op, const char* p_param);
+int app_cmd_parse_open(app_cmd_open_t* p_open, const char* p_param);
+void app_cmd_parse_free_open(app_cmd_open_t* p_open);
 
 
 typedef struct app_cmd_control_t_

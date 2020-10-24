@@ -118,7 +118,7 @@ void ffmpeg_dec_av_frame_free(AVFrame* p_frame)
     }
 }
 
-static em_yuv_frame_t* ffmpeg_dec_yuv420p(AVFrame* p_avframe)
+static em_frame_yuv_wav_t* ffmpeg_dec_yuv420p(AVFrame* p_avframe, int64_t pts)
 {
     int w = p_avframe->width;
     int h = p_avframe->height;
@@ -140,13 +140,15 @@ static em_yuv_frame_t* ffmpeg_dec_yuv420p(AVFrame* p_avframe)
     int u_len = pitch_u * uv_h;
     int v_len = pitch_v * uv_h;
 
-    em_yuv_frame_t* p_yuv = KLB_MALLOC(em_yuv_frame_t, 1, 0);
-    KLB_MEMSET(p_yuv, 0, sizeof(em_yuv_frame_t));
+    em_frame_yuv_wav_t* p_yuv = KLB_MALLOC(em_frame_yuv_wav_t, 1, 0);
+    KLB_MEMSET(p_yuv, 0, sizeof(em_frame_yuv_wav_t));
 
+    p_yuv->type = EM_FRAME_TYPE_YUV;
     p_yuv->w = w;
     p_yuv->h = h;
 
     p_yuv->buf_len = y_len + u_len + v_len;
+    p_yuv->end = y_len + u_len + v_len;
     p_yuv->p_buf = KLB_MALLOC(uint8_t, p_yuv->buf_len, 0);
 
     p_yuv->p_y = p_yuv->p_buf;
@@ -190,18 +192,18 @@ static em_yuv_frame_t* ffmpeg_dec_yuv420p(AVFrame* p_avframe)
         p_dst += pitch_v;
     }
 
-    p_yuv->pts = p_avframe->pts;
+    p_yuv->pts = pts;//p_avframe->pts;
 
     return p_yuv;
 }
 
-em_yuv_frame_t* ffmpeg_dec_decode2(ffmpeg_dec_t* p_dec, uint8_t* p_data, int data_len, int64_t pts, int64_t dts)
+em_frame_yuv_wav_t* ffmpeg_dec_decode2(ffmpeg_dec_t* p_dec, uint8_t* p_data, int data_len, int64_t pts, int64_t dts)
 {
     AVFrame* p_frame = ffmpeg_dec_decode(p_dec, p_data, data_len, pts, dts);
 
     if (NULL != p_frame)
     {
-        em_yuv_frame_t* p_yuv = ffmpeg_dec_yuv420p(p_frame);
+        em_frame_yuv_wav_t* p_yuv = ffmpeg_dec_yuv420p(p_frame, pts);
         ffmpeg_dec_av_frame_free(p_frame);
 
         return p_yuv;
@@ -210,7 +212,7 @@ em_yuv_frame_t* ffmpeg_dec_decode2(ffmpeg_dec_t* p_dec, uint8_t* p_data, int dat
     return NULL;
 }
 
-void ffmpeg_dec_yuv_frame_free(em_yuv_frame_t* p_yuv)
+void ffmpeg_dec_yuv_frame_free(em_frame_yuv_wav_t* p_yuv)
 {
     assert(NULL != p_yuv);
 

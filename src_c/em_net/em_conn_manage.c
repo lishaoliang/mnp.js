@@ -4,12 +4,12 @@
 #include "mem/klb_mem.h"
 #include "hash/klb_hlist.h"
 #include "em_util/em_buf.h"
-#include "em_net/em_conn_ws_mnp.h"
 #include "em_util/em_log.h"
 #include "em_util/em_buf_mnp.h"
-#include "em_fetch/em_fetch_flv.h"
-#include "em_ws/em_ws_mnp.h"
-#include "em_ws/em_ws_flv.h"
+#include "em_fetch_flv.h"
+#include "em_fetch_mnp.h"
+#include "em_ws_flv.h"
+#include "em_ws_mnp.h"
 #include <assert.h>
 
 
@@ -76,44 +76,14 @@ static em_conn_env_t* em_conn_manage_find(em_conn_manage_t* p_manage, const char
     return p_env;
 }
 
-int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, const char* p_name, const char* p_ip, int port, const char* p_path)
+int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, const char* p_name, const char* p_url)
 {
     assert(NULL != p_manage);
 
-    //LOG("em_conn_manage_connect : [%s],[%s],[%s]:[%d][%s]", p_protocol, p_name, p_ip, port, p_path);
-
-#if 0
-    em_socket_t* p_socket = em_socket_create(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (NULL == p_socket)
-    {
-        return 1;
-    }
-
-    if (0 != em_socket_connect(p_socket, p_ip, port))
-    {
-        em_socket_destroy(p_socket);
-        return 1;
-    }
+    //LOG("em_conn_manage_connect : [%s],[%s],[%s]", p_protocol, p_name, p_url);
 
     em_conn_env_t* p_env = KLB_MALLOC(em_conn_env_t, 1, 0);
     KLB_MEMSET(p_env, 0, sizeof(em_conn_env_t));
-
-    // EM_NET_WS_MNP
-    em_conn_ws_mnp_t* p_mnp = em_conn_ws_mnp_create(p_manage, p_socket);
-    em_conn_ws_mnp_init_env(p_env, p_mnp);
-
-    int name_len = strlen(p_name);
-
-    int ret = em_socket_manage_push(p_manage->p_socket_manage, p_name, name_len, p_socket);
-    assert(0 == ret);
-
-    ret = klb_hlist_push_tail(p_manage->p_conn_hlist, p_name, name_len, p_env);
-    assert(0 == ret);
-#else
-
-    em_conn_env_t* p_env = KLB_MALLOC(em_conn_env_t, 1, 0);
-    KLB_MEMSET(p_env, 0, sizeof(em_conn_env_t));
-
 
     if (0 == strcmp(EM_NET_HTTP_FLV, p_protocol))
     {
@@ -126,7 +96,20 @@ int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, c
         int ret = klb_hlist_push_tail(p_manage->p_conn_hlist, p_name, name_len, p_env);
         assert(0 == ret);
 
-        emfetch_stream_connect(p_emfetch, "GET", p_ip, port, p_path);
+        emfetch_stream_connect(p_emfetch, "GET", p_url);
+    }
+    else if (0 == strcmp(EM_NET_HTTP_MNP, p_protocol))
+    {
+        // EM_NET_HTTP_MNP
+        emfetch_stream_t* p_emfetch = emfetch_stream_create();
+        emfetch_mnp_t* p_emfetch_mnp = emfetch_mnp_create(p_name, p_manage, p_emfetch);
+        emfetch_mnp_init_env(p_env, p_emfetch_mnp);
+
+        int name_len = strlen(p_name);
+        int ret = klb_hlist_push_tail(p_manage->p_conn_hlist, p_name, name_len, p_env);
+        assert(0 == ret);
+
+        emfetch_stream_connect(p_emfetch, "GET", p_url);
     }
     else if (0 == strcmp(EM_NET_WS_FLV, p_protocol))
     {
@@ -142,7 +125,7 @@ int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, c
         ret = klb_hlist_push_tail(p_manage->p_conn_hlist, p_name, name_len, p_env);
         assert(0 == ret);
 
-        emws_socket_connect(p_emws, p_ip, port, p_path);
+        emws_socket_connect(p_emws, p_url);
     }
     else
     {
@@ -158,9 +141,8 @@ int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, c
         ret = klb_hlist_push_tail(p_manage->p_conn_hlist, p_name, name_len, p_env);
         assert(0 == ret);
 
-        emws_socket_connect(p_emws, p_ip, port, p_path);
+        emws_socket_connect(p_emws, p_url);
     }
-#endif
 
     return 0;
 }

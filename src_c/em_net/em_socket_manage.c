@@ -1,11 +1,10 @@
-﻿#include "em_socket_manage.h"
+﻿// select支持N个socket, 必须在引用select之前定义
+#define FD_SETSIZE      1024
+
+#include "em_socket_manage.h"
 #include "mem/klb_mem.h"
 #include "hash/klb_hlist.h"
 #include "em_util/em_log.h"
-
-// select支持N个socket, 必须在引用select之前定义
-#define FD_SETSIZE      1024
-
 #include <sys/select.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -16,7 +15,7 @@ typedef struct em_socket_manage_t_
 {
     klb_hlist_t*        p_socket_hlist;     ///< 所有BSD连接列表
     klb_hlist_t*        p_ws_socket_hlist;  ///< 所有websocket连接列表 
-    uint32_t            tickcount;
+    int64_t             tickcount;
 }em_socket_manage_t;
 
 
@@ -107,7 +106,7 @@ int em_socket_manage_remove(em_socket_manage_t* p_manage, const void* p_key, uin
 
 //////////////////////////////////////////////////////////////////////////
 
-int em_socket_manage_run(em_socket_manage_t* p_manage, uint32_t now_ticks)
+int em_socket_manage_run(em_socket_manage_t* p_manage, int64_t now_ticks)
 {
     assert(NULL != p_manage);
 

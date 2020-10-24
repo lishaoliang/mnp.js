@@ -23,17 +23,17 @@ extern "C" {
 
 
 // 检查 em_buf_t 数据完整性
-int em_buf_mnp_check(em_buf_t* p_buf);
+int em_buf_mnp_check(const em_buf_t* p_buf);
 
 
 // 将 em_buf_t 帧数据提取出媒体
-int em_buf_mnp_join_md(const em_buf_t* p_buf, klb_mnp_md_t* p_out_md, char** p_data, int* p_data_len);
+int em_buf_mnp_join_md(const em_buf_t* p_buf, klb_mnp_media_t* p_out_md, char** p_data, int* p_data_len);
 
 // 将 em_buf_t 帧数据提取出媒体
 em_buf_t* em_buf_mnp_join_md2(const em_buf_t* p_buf);
 
 // 将 em_buf_t 帧数据提取出文本
-int em_buf_mnp_join_txt(const em_buf_t* p_buf, klb_mnp_txt_t* p_out_mnp_txt, char** p_data, int* p_data_len);
+int em_buf_mnp_join_txt(const em_buf_t* p_buf, klb_mnp_common_t* p_out_mnp_txt, char** p_data, int* p_data_len);
 
 // 将txt打包成em_buf_t
 em_buf_t* em_buf_mnp_pack_txt(const char* p_txt, uint32_t sequence, uint32_t uid);

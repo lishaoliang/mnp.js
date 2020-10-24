@@ -3,7 +3,7 @@
 //  Created: 2020
 //
 /// @file    ffmpeg_dec.h
-/// @brief   文件简要描述
+/// @brief   ffmpeg视频解码
 /// @author  李绍良
 ///  \n https://github.com/lishaoliang/mnp.js
 /// @version 0.1
@@ -15,7 +15,7 @@
 
 #include "klb_type.h"
 
-#include "em_util/em_yuv_frame.h"
+#include "em_frame_yuv_wav.h"
 #include "libavcodec/avcodec.h"
 #include "libavutil/frame.h"
 
@@ -35,8 +35,8 @@ AVFrame* ffmpeg_dec_decode(ffmpeg_dec_t* p_dec, uint8_t* p_data, int data_len, i
 void ffmpeg_dec_av_frame_free(AVFrame* p_frame);
 
 
-em_yuv_frame_t* ffmpeg_dec_decode2(ffmpeg_dec_t* p_dec, uint8_t* p_data, int data_len, int64_t pts, int64_t dts);
-void ffmpeg_dec_yuv_frame_free(em_yuv_frame_t* p_yuv);
+em_frame_yuv_wav_t* ffmpeg_dec_decode2(ffmpeg_dec_t* p_dec, uint8_t* p_data, int data_len, int64_t pts, int64_t dts);
+void ffmpeg_dec_yuv_frame_free(em_frame_yuv_wav_t* p_yuv);
 
 
 #ifdef __cplusplus

@@ -8,10 +8,13 @@
 #include "emscripten/threading.h"
 #include "emscripten/websocket.h"
 #include "mem/klb_mem.h"
+#include "em_audio_ctx.h"
 #include <assert.h>
 
 
-extern main_app_t* g_main_app = NULL;
+/*extern*/ main_app_t* g_main_app = NULL;       ///< 主APP
+/*extern*/ bool        g_main_hidden = false;   ///< 页面是否隐藏
+
 static void cb_main_loop(void);
 
 
@@ -33,14 +36,18 @@ static int get_next_id()
 
 int main() 
 {
+    // 打印
+    LOG("C https://github.com/lishaoliang/mnp.js");
+    LOG("C https://gitee.com/lishaoliang/mnp.js");
+
     // 打印是否支持
-    LOG("emscripten_websocket_is_supported: %d", emscripten_websocket_is_supported());
-    LOG("emscripten_has_threading_support: %d", emscripten_has_threading_support());
+    LOG("C emscripten_websocket_is_supported: %d", emscripten_websocket_is_supported());
+    LOG("C emscripten_has_threading_support: %d", emscripten_has_threading_support());
 
     // 初始化 SDL
-    if (SDL_Init(SDL_INIT_VIDEO) != 0)
+    if (SDL_Init(SDL_INIT_AUDIO | SDL_INIT_VIDEO) != 0)
     {
-        LOG_S("Unable to initialize SDL: %s\n", SDL_GetError());
+        LOG_S("C unable to initialize SDL: %s\n", SDL_GetError());
         return 1;
     }
 
@@ -53,6 +60,9 @@ int main()
     LOG("C get canvas size:[%d,%d,%d]", w, h, is_full);
     //int w = 960, h = 540;
     emgl_ctx_init(w, h, 32);
+
+    // 初始化音频设备
+    em_audio_ctx_init();
 
     // 初始化 main_app_t
     g_main_app = main_app_create();
@@ -69,8 +79,9 @@ int main()
 
 static void cb_main_loop(void)
 {
-    // fps = 0时, 目测 100-120 帧左右
-    uint32_t now = em_get_ticks();
+    //uint32_t now = em_get_ticks();
+    int64_t now = emscripten_get_now();
+    now *= 1000;
 
     main_app_run(g_main_app, now);
 }
@@ -88,6 +99,17 @@ EMSCRIPTEN_KEEPALIVE int mnpjs_hello(int n)
     return n;
 }
 
+/// @brief 设置是否隐藏
+/// 1.true,隐藏
+/// 0.false,不隐藏
+EMSCRIPTEN_KEEPALIVE int mnpjs_set_hidden(int hidden)
+{
+    g_main_hidden = (0 == hidden) ? false : true;
+    //LOG("C mnpjs_set_hidden:[%d]", g_main_hidden);
+
+    return 0;
+}
+
 /// @brief 模块退出, 清理资源
 EMSCRIPTEN_KEEPALIVE int mnpjs_quit(int status)
 {
@@ -103,6 +125,8 @@ EMSCRIPTEN_KEEPALIVE int mnpjs_quit(int status)
     // destroy
     KLB_FREE_BY(g_main_app, main_app_destroy);
     
+    em_audio_ctx_quit();
+
     SDL_Quit();
     LOG("C mnpjs_quit over.");
 
@@ -110,13 +134,13 @@ EMSCRIPTEN_KEEPALIVE int mnpjs_quit(int status)
 }
 
 /// @brief 控制命令: 设置参数等
-EMSCRIPTEN_KEEPALIVE char* mnpjs_control(const char* p_param)
+EMSCRIPTEN_KEEPALIVE char* mnpjs_control(const char* p_cmd, const char* p_lparam, const char* p_wparam)
 {
-    return main_app_control(g_main_app, p_param);
+    return main_app_control(g_main_app, p_cmd, p_lparam, p_wparam);
 }
 
 
-/// @brief 打开某个设备
+/// @brief 打开某个流
 /// @param [in] *p_name  名称
 /// @param [in] *p_param json格式的参数信息
 /// \n 例如: {"ip"="127.0.0.1","port"=8000,"protocol"="WS-MNP","path"="/wsmnp"}

@@ -14,26 +14,20 @@
     <script type='text/javascript'>
       var Module = mnpjs
 
-      Module.postRun = function() {
+      mnpjs.postRun = function() {
         mnpjs.hello(1000)
 
-        // {"ip"="127.0.0.1","port"=8000,"protocol"="WS-MNP","path"="/stream/wsmnp/chnn0/sidx1"}
-        mnpjs.open('123456', JSON.stringify({
-          ip : window.location.hostname,
-          port : parseInt(window.location.port),
-          protocol : 'WS-FLV',
-          path : '/stream/wsflv/chnn0/sidx1'
-          }), function(result/*obj*/){
-            console.log('open ' + window.location.hostname + ':' + window.location.port + '/stream/wsflv/*', result);
+        // {"protocol"="WS-FLV","url"="ws://127.0.0.1:8080/stream/wsflv/chnn0/sidx1"}
+        var param = JSON.stringify({
+            protocol : 'WS-FLV',
+            url : 'ws://' + window.location.hostname + ':' + window.location.port + '/stream/wsflv/chnn0/sidx1'
+          });
+         
+        mnpjs.open('123456', param, function(result){
+            console.log('open ', result, param);
         });
-
       }
 
-      window.onerror = function(event) {
-      };
-
-      window.onload = function(e){
-      };
     </script>
 
   </body>

@@ -14,7 +14,7 @@
 #define __GL_YUV_H__
 
 #include "klb_type.h"
-#include "em_util/em_yuv_frame.h"
+#include "em_frame_yuv_wav.h"
 
 typedef struct emgl_yuv_t_ emgl_yuv_t;
 
@@ -22,7 +22,7 @@ emgl_yuv_t* emgl_yuv_create();
 void emgl_yuv_destroy(emgl_yuv_t* p_rgb);
 
 
-int emgl_yuv_draw(emgl_yuv_t* p_yuv, em_yuv_frame_t* p_frame);
+int emgl_yuv_draw(emgl_yuv_t* p_yuv, em_frame_yuv_wav_t* p_frame);
 
 
 #endif // __GL_YUV_H__

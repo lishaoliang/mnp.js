@@ -84,8 +84,6 @@ int main() {
     emscripten_async_wget_data("http://192.168.1.250/", "index2.html", NULL, NULL);
 #endif
 
-    //emscripten_async_wget_data("http://192.168.1.101:3456/luaflv/chnn0/idx0", "index3.html", NULL, NULL);
-
     //mnp_sleep(6000);
 
 

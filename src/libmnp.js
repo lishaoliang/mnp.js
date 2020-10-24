@@ -7,8 +7,9 @@ https://gitee.com/lishaoliang/mnp.js
 var mnpjs = (function(){
 
 var _hello = function(n/*number*/){console.log('mnpjs hello:[', n, ']');return n;};
+var _set_hidden = function(hidden){console.log('mnpjs_set_hidden', hidden);};
 var _quit = function(status/*number*/){console.log('mnpjs quit');return status;};
-var _control = function(param/*string*/){return ''};
+var _control = function(cmd/*string*/, lparam/*string*/, wparam/*string*/){return ''};
 var _open = function(name/*string*/, param/*string*/){return 0;};
 var _close = function(name/*string*/){return 0;};
 var _request = function(name/*string*/, req/*string*/){return 0;};
@@ -28,8 +29,9 @@ var _onRuntimeInitialized = function(){
     // before main			
 
     _hello = Module.cwrap('mnpjs_hello', 'number', ['number']);
+    _set_hidden = Module.cwrap('mnpjs_set_hidden', 'number', ['number']);
     _quit = Module.cwrap('mnpjs_quit', 'number', ['number']);
-    _control = Module.cwrap('mnpjs_control', 'string', ['string']);
+    _control = Module.cwrap('mnpjs_control', 'string', ['string','string','string']);
     _open = Module.cwrap('mnpjs_open', 'number', ['string', 'string']);
     _close = Module.cwrap('mnpjs_close', 'number', ['string']);
     _request = Module.cwrap('mnpjs_request', 'number', ['string', 'string']);
@@ -106,7 +108,31 @@ var getResult = function(id){
 
     return '';
 };
-  
+
+// 监听页面是否激活
+// 非激活情况下: 解码,显示可能丢弃部分数据
+var listenerVisibility = function() {
+    // https://www.cnblogs.com/csuwujing/p/10315309.html
+    var hiddenProperty = 'hidden' in document ? 'hidden' :    
+                        'webkitHidden' in document ? 'webkitHidden' :    
+                        'mozHidden' in document ? 'mozHidden' :    
+                        null;
+
+    var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+
+    document.addEventListener(visibilityChangeEvent, function(){
+        if (!document[hiddenProperty]) {    
+            //console.log('document show');
+            _set_hidden(false);
+        }else{
+            //console.log('document hidden');
+            _set_hidden(true);
+        }
+    });
+};
+
+listenerVisibility();
+
 return {
     quit : _quit,
     preRun : _preRun,
@@ -131,8 +157,8 @@ return {
 
     hello : function(n/*number*/){ _hello(n); },
 
-    control : function(param/*string*/){
-        var ptr = _control(param);
+    control : function(cmd/*string*/,lparam/*string*/,wparam/*string*/){
+        var ptr = _control(cmd, lparam, wparam);
 
         if (ptr) {
             var s = new String(ptr);
@@ -143,9 +169,9 @@ return {
         return '';
     },
 
-    open : function(name/*string*/, param/*string*/, cb/*function*/){
-
-        var id = _open(name, param);
+    open : function(name/*string*/, param/*obj*/, cb/*function*/){
+        var json = JSON.stringify(param)
+        var id = _open(name, json);
         if (0 < id) {
             cbMaps.set(id.toString(), cb)
         } else {

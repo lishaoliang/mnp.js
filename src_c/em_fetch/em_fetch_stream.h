@@ -2,25 +2,24 @@
 #define __EM_FETCH_STREAM_H__
 
 #include "klb_type.h"
-#include "emscripten/fetch.h"
 
 #if defined(__cplusplus)
 extern "C" {
 #endif
 
 // -s FETCH=1
+// 标准fetch库, 不是适合做流处理, 所以加入专门针对流处理的附加库 libmnpfetch.js
 
 typedef struct emfetch_stream_t_ emfetch_stream_t;
 
 typedef int(*emfetch_stream_open_cb)(emfetch_stream_t* p_emfetch, uint32_t now_ticks, int code);
 typedef int(*emfetch_stream_error_cb)(emfetch_stream_t* p_emfetch, uint32_t now_ticks);
-typedef int(*emfetch_stream_recv_cb)(emfetch_stream_t* p_emfetch, uint32_t now_ticks, emscripten_fetch_t* p_fetch);
+typedef int(*emfetch_stream_recv_cb)(emfetch_stream_t* p_emfetch, uint32_t now_ticks, const char* p_data, int data_len);
 
 
 typedef struct emfetch_stream_t_
 {
-    emscripten_fetch_attr_t     attr;
-    emscripten_fetch_t*         p_fetch;
+    int                         id;
 
     void*                       p_user1;    ///< 用户自定义指针1
     void*                       p_user2;    ///< 用户自定义指针2
@@ -39,7 +38,7 @@ typedef struct emfetch_stream_t_
 emfetch_stream_t* emfetch_stream_create();
 void emfetch_stream_destroy(emfetch_stream_t* p_emfetch);
 
-int emfetch_stream_connect(emfetch_stream_t* p_emfetch, const char* p_method, const char* p_ip, int port, const char* p_path);
+int emfetch_stream_connect(emfetch_stream_t* p_emfetch, const char* p_method, const char* p_url);
 
 
 

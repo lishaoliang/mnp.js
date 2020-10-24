@@ -1,4 +1,7 @@
 ﻿#include "em_fetch/em_fetch.h"
+
+#if 0
+
 #include "emscripten/fetch.h"
 #include "mem/klb_mem.h"
 #include "em_util/em_log.h"
@@ -85,3 +88,5 @@ int mnp_fetch_request(mnp_fetch_t* p_fetch, const char* p_method, const char* p_
 
     return (NULL == p_fetch->p_em_fetch)? false : true;
 }
+
+#endif

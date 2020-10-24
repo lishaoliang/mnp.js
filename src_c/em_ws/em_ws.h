@@ -65,7 +65,7 @@ typedef enum emws_socket_status_e_
 emws_socket_t* emws_socket_create();
 void emws_socket_destroy(emws_socket_t* p_emws);
 
-int emws_socket_connect(emws_socket_t* p_emws, const char* p_ip, int port, const char* p_path);
+int emws_socket_connect(emws_socket_t* p_emws, const char* p_url);
 
 int emws_socket_send_utf8_text(emws_socket_t* p_emws, const uint8_t* p_buf, int len);
 int emws_socket_send_binary(emws_socket_t* p_emws, const uint8_t* p_buf, int len);

@@ -21,7 +21,7 @@ void emfetch_flv_destroy(void* ptr);
 
 int emfetch_flv_on_open(emfetch_stream_t* p_emfetch, uint32_t now_ticks, int code);
 int emfetch_flv_on_error(emfetch_stream_t* p_emfetch, uint32_t now_ticks);
-int emfetch_flv_on_recv(emfetch_stream_t* p_emfetch, uint32_t now_ticks, emscripten_fetch_t* p_fetch);
+int emfetch_flv_on_recv(emfetch_stream_t* p_emfetch, uint32_t now_ticks, const char* p_data, int data_len);
 
 
 #ifdef __cplusplus

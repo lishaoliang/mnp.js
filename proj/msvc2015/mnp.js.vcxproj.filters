@@ -112,6 +112,18 @@
     <Filter Include="third\cJSON">
       <UniqueIdentifier>{b893f4fb-a5c9-406b-b9b6-01c2de043eb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{57418339-d475-4218-9639-d32e6fa17f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\demux">
+      <UniqueIdentifier>{21ff79d0-0cbb-4d87-8a6b-f7da9edeb558}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\em_audio">
+      <UniqueIdentifier>{3d1c4c34-f0bb-4077-9c57-bb429f3c7716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_c\ff_dec\rate_ctrl">
+      <UniqueIdentifier>{91b3a5aa-2b13-4468-b198-4006a070ce65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\emcc_include\libc\alltypes.h.in">
@@ -123,11 +135,20 @@
     <None Include="..\..\src_c\test_res\mk_res.lua">
       <Filter>src_c\test_res</Filter>
     </None>
-    <None Include="..\..\src_c\Makefile">
-      <Filter>src_c</Filter>
-    </None>
     <None Include="..\..\make_define" />
     <None Include="..\..\Makefile" />
+    <None Include="..\..\src\libmnp.js">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\src\libmnpxhr.js">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\src\libmnpfetch.js">
+      <Filter>src</Filter>
+    </None>
+    <None Include="..\..\src\libmnputil.js">
+      <Filter>src</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src_c\em_fetch\em_fetch.c">
@@ -149,12 +170,6 @@
       <Filter>src_c\em_net</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src_c\em_net\em_conn_manage_in.c">
-      <Filter>src_c\em_net</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_flv.c">
-      <Filter>src_c\em_net</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src_c\em_net\em_conn_ws_mnp.c">
       <Filter>src_c\em_net</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src_c\em_net\em_socket.c">
@@ -181,9 +196,6 @@
     <ClCompile Include="..\..\src_c\em_util\em_timer.c">
       <Filter>src_c\em_util</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src_c\em_ws\em_flv_parser.c">
-      <Filter>src_c\em_ws</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src_c\em_ws\em_ws.c">
       <Filter>src_c\em_ws</Filter>
     </ClCompile>
@@ -192,9 +204,6 @@
     </ClCompile>
     <ClCompile Include="..\..\src_c\em_ws\em_ws_mnp.c">
       <Filter>src_c\em_ws</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_manage.c">
-      <Filter>src_c\ff_dec</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec.c">
       <Filter>src_c\ff_dec</Filter>
@@ -267,6 +276,51 @@
     </ClCompile>
     <ClCompile Include="..\..\src_c\em_fetch\em_fetch_mnp.c">
       <Filter>src_c\em_fetch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\demux\em_flv_demux.c">
+      <Filter>src_c\demux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\demux\em_flv_parser.c">
+      <Filter>src_c\demux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\demux\em_mnp_demux.c">
+      <Filter>src_c\demux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ffmpeg_dec_audio.c">
+      <Filter>src_c\ff_dec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_dec_single.c">
+      <Filter>src_c\ff_dec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_audio\em_audio_ctx.c">
+      <Filter>src_c\em_audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_lower.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_middle.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_high.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_higher.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_low.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\ff_dec\ff_rate_ctrl_lowest.c">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\test_res\tmem_flv.c">
+      <Filter>src_c\test_res</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src_c\em_util\em_frame_yuv_wav.c">
+      <Filter>src_c\em_util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1251,16 +1305,7 @@
     <ClInclude Include="..\..\inc\mnp\klb_mnp.h">
       <Filter>inc\mnp</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_bin.h">
-      <Filter>inc\mnp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_media.h">
-      <Filter>inc\mnp</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\mnp\klb_mnp_stream.h">
-      <Filter>inc\mnp</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\mnp\klb_mnp_txt.h">
       <Filter>inc\mnp</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\thread\klb_atomic.h">
@@ -1302,12 +1347,6 @@
     <ClInclude Include="..\..\src_c\em_net\em_conn_manage_in.h">
       <Filter>src_c\em_net</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_flv.h">
-      <Filter>src_c\em_net</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src_c\em_net\em_conn_ws_mnp.h">
-      <Filter>src_c\em_net</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src_c\em_net\em_socket.h">
       <Filter>src_c\em_net</Filter>
     </ClInclude>
@@ -1332,12 +1371,6 @@
     <ClInclude Include="..\..\src_c\em_util\em_timer.h">
       <Filter>src_c\em_util</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src_c\em_util\em_yuv_frame.h">
-      <Filter>src_c\em_util</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src_c\em_ws\em_flv_parser.h">
-      <Filter>src_c\em_ws</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src_c\em_ws\em_ws.h">
       <Filter>src_c\em_ws</Filter>
     </ClInclude>
@@ -1346,9 +1379,6 @@
     </ClInclude>
     <ClInclude Include="..\..\src_c\em_ws\em_ws_mnp.h">
       <Filter>src_c\em_ws</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_manage.h">
-      <Filter>src_c\ff_dec</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec.h">
       <Filter>src_c\ff_dec</Filter>
@@ -1382,6 +1412,39 @@
     </ClInclude>
     <ClInclude Include="..\..\src_c\em_fetch\em_fetch_mnp.h">
       <Filter>src_c\em_fetch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\libmnpxhr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\libmnpfetch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\demux\em_flv_demux.h">
+      <Filter>src_c\demux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\demux\em_flv_parser.h">
+      <Filter>src_c\demux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\demux\em_mnp_demux.h">
+      <Filter>src_c\demux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\ff_dec\ffmpeg_dec_audio.h">
+      <Filter>src_c\ff_dec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_util\em_frame_yuv_wav.h">
+      <Filter>src_c\em_util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\ff_dec\ff_dec_single.h">
+      <Filter>src_c\ff_dec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\em_audio\em_audio_ctx.h">
+      <Filter>src_c\em_audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\ff_dec\ff_rate_ctrl.h">
+      <Filter>src_c\ff_dec\rate_ctrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src_c\test_res\tmem_flv.h">
+      <Filter>src_c\test_res</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

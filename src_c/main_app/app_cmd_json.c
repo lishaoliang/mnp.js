@@ -1,4 +1,5 @@
 ﻿#include "app_cmd_json.h"
+#include "em_conn_manage.h"
 #include "cJSON.h"
 #include "mem/klb_mem.h"
 #include <stdio.h>
@@ -19,9 +20,9 @@ static cJSON* my_cJSON_GetObjectItem(const cJSON * const p_object, const char * 
 }
 
 
-int app_cmd_parse_open(app_cmd_open_t* p_op, const char* p_param)
+int app_cmd_parse_open(app_cmd_open_t* p_open, const char* p_param)
 {
-    assert(NULL != p_op);
+    assert(NULL != p_open);
 
     // {"ip"="127.0.0.1","port"=8000,"protocol"="WS-MNP","path"="/wsmnp"}
 
@@ -32,35 +33,25 @@ int app_cmd_parse_open(app_cmd_open_t* p_op, const char* p_param)
         return 1;
     }
 
-    cJSON* p_ip_json = my_cJSON_GetObjectItem(p_root, "ip", cJSON_String);
-    cJSON* p_port_json = my_cJSON_GetObjectItem(p_root, "port", cJSON_Number);
     cJSON* p_protocol_json = my_cJSON_GetObjectItem(p_root, "protocol", cJSON_String);
-    cJSON* p_path_json = my_cJSON_GetObjectItem(p_root, "path", cJSON_String);
+    cJSON* p_url_json = my_cJSON_GetObjectItem(p_root, "url", cJSON_String);
 
     int ret = 1;
-    if (NULL != p_ip_json)
+    if (NULL != p_url_json)
     {
-        // ip
-        strncpy(p_op->ip, p_ip_json->valuestring, APP_CMD_STR_LEN);
-
-        // port
-        p_op->port = (NULL != p_port_json) ? p_port_json->valueint : 80;
-
         // protocol
         if (NULL != p_protocol_json)
         {
-            strncpy(p_op->protocol, p_protocol_json->valuestring, APP_CMD_STR_LEN);
+            strncpy(p_open->protocol, p_protocol_json->valuestring, APP_CMD_STR_LEN);
         }
         else
         {
-            strncpy(p_op->protocol, "WS-MNP", APP_CMD_STR_LEN);
+            strncpy(p_open->protocol, EM_NET_WS_MNP, APP_CMD_STR_LEN);
         }
 
-        // path
-        if (NULL != p_path_json)
-        {
-            strncpy(p_op->path, p_path_json->valuestring, APP_CMD_PATH_LEN);
-        }
+        int url_len = strlen(p_url_json->valuestring);
+        p_open->p_url = KLB_MALLOC(char, url_len + 4, 0);
+        strcpy(p_open->p_url, p_url_json->valuestring);
 
         ret = 0;
     }
@@ -68,6 +59,15 @@ int app_cmd_parse_open(app_cmd_open_t* p_op, const char* p_param)
 
     KLB_FREE_BY(p_root, cJSON_Delete);
     return ret;
+}
+
+void app_cmd_parse_free_open(app_cmd_open_t* p_open)
+{
+    assert(NULL != p_open);
+    if (NULL != p_open)
+    {
+        KLB_FREE(p_open->p_url);
+    }
 }
 
 

@@ -31,10 +31,10 @@ int main_app_start(main_app_t* p_app);
 void main_app_stop(main_app_t* p_app);
 
 
-int main_app_run(main_app_t* p_app, uint32_t now_ticks);
+int main_app_run(main_app_t* p_app, int64_t now_ticks);
 
 
-char* main_app_control(main_app_t* p_app, const char* p_param);
+char* main_app_control(main_app_t* p_app, const char* p_cmd, const char* p_lparam, const char* p_wparam);
 int main_app_open(main_app_t* p_app, int id, const char* p_name, const char* p_param);
 int main_app_close(main_app_t* p_app, const char* p_name);
 int main_app_request(main_app_t* p_app, int id, const char* p_name, const char* p_req);

@@ -71,7 +71,7 @@ typedef struct em_conn_manage_t_ em_conn_manage_t;
 em_conn_manage_t* em_conn_manage_create(em_socket_manage_t* p_socket_manage);
 void em_conn_manage_destroy(em_conn_manage_t* p_manage);
 
-int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, const char* p_name, const char* p_ip, int port, const char* p_path);
+int em_conn_manage_connect(em_conn_manage_t* p_manage, const char* p_protocol, const char* p_name, const char* p_url);
 int em_conn_manage_close(em_conn_manage_t* p_manage, const char* p_name);
 
 int em_conn_manage_send(em_conn_manage_t* p_manage, const char* p_name, em_buf_t* p_buf);

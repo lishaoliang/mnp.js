@@ -14,13 +14,13 @@
 #define __MAIN_APP_IN_H__
 
 #include "klb_type.h"
-#include "test_res/tmem_h264.h"
-#include "em_net/em_socket_manage.h"
-#include "em_net/em_conn_manage.h"
-#include "ff_dec/ff_dec_manage.h"
-#include "em_gl/gl_ctx.h"
-#include "em_gl/gl_yuv.h"
-#include "main_app/main_app_task.h"
+
+#include "em_socket_manage.h"
+#include "em_conn_manage.h"
+#include "ff_dec_single.h"
+#include "gl_ctx.h"
+#include "gl_yuv.h"
+#include "main_app_task.h"
 #include <assert.h>
 
 
@@ -40,12 +40,14 @@ typedef struct main_app_t_
     emgl_yuv_t*         p_gl_yuv;
 
     // 解码
-    ff_dec_manage_t*    p_dec_manage;
+    ff_dec_single_t*    p_dec_manage;
     //ffmpeg_dec_t*     p_ffmpeg_dec;
 
+#if 0
     // 测试h264数据
     tmem_h264_t*        p_tmem_h264;
     uint32_t            last_tc;
+#endif
 
     main_app_task_t*    p_open_task;
     main_app_task_t*    p_request_task;

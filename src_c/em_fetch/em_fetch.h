@@ -7,6 +7,9 @@
 extern "C" {
 #endif
 
+// -s FETCH=1
+// 标准fetch库, 不是适合做流处理
+#if 0
 
 typedef struct mnp_fetch_t_ mnp_fetch_t;
 
@@ -16,6 +19,7 @@ void mnp_fetch_destroy(mnp_fetch_t* p_fetch);
 
 int mnp_fetch_request(mnp_fetch_t* p_fetch, const char* p_method, const char* p_url);
 
+#endif
 
 #ifdef __cplusplus
 }

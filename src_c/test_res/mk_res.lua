@@ -2,14 +2,14 @@ local io = require("io")
 local string = require("string")
 
 
--- Ğ´ÈëµÄÍ·ÎÄ¼ş
+-- å†™å…¥çš„å¤´æ–‡ä»¶
 local h_name = './mnp_h264_res.h'
 
 
--- ĞèÒªµ¼ÈëµÄluaÎÄ¼ş
+-- éœ€è¦å¯¼å…¥çš„luaæ–‡ä»¶
 local files = {
-	{'./test1.h264',		'g_mnp_h264_test1'},
-	--{'./test2.h264',		'g_mnp_h264_test2'}
+	{'./2019.432x240.X264.AAC.Mandarin.240.10.h264',	'g_mnp_h264_test1'},
+	{'./2019.432x240.X264.AAC.Mandarin.240.10.flv',		'g_mnp_flv_test2'}
 }
 
 
@@ -17,7 +17,7 @@ local fout = io.open(h_name, 'w')
 assert(fout)
 
 
--- ÎÄ¼şÍ·
+-- æ–‡ä»¶å¤´
 fout:write('#ifndef __MNP_H264_RES_H__\n')
 fout:write('#define __MNP_H264_RES_H__\n')
 fout:write('#include <stdio.h>\n')
@@ -25,7 +25,7 @@ fout:write('#include <string.h>\n')
 fout:write('\n')
 
 
--- ½á¹¹Ìå¶¨Òå
+-- ç»“æ„ä½“å®šä¹‰
 local def_st_map = '#define MNP_MAP_BUF   68\
 typedef struct mnp_map_t_\
 {\
@@ -72,12 +72,12 @@ local write_array = function (pf, r_name, k_name)
 end
 
 
--- Ğ´ÎÄ¼ş¶ş½øÖÆÊı×é
+-- å†™æ–‡ä»¶äºŒè¿›åˆ¶æ•°ç»„
 for i = 1, #files do
 	write_array(fout, files[i][1], files[i][2])
 end
 
--- Ğ´mapĞÅÏ¢
+-- å†™mapä¿¡æ¯
 fout:write('\n')
 fout:write('mnp_map_t g_res_key_map[] = {\n')
 
@@ -90,7 +90,7 @@ fout:write('    {"", NULL, 0}\n')
 fout:write('};\n')
 
 
--- ÎÄ¼şÄ©Î²
+-- æ–‡ä»¶æœ«å°¾
 fout:write('\n')
 fout:write('#endif\n')
 fout:close()

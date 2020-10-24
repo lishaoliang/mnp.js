@@ -210,15 +210,12 @@ void emgl_yuv_destroy(emgl_yuv_t* p_yuv)
 }
 
 
-int emgl_yuv_draw(emgl_yuv_t* p_yuv, em_yuv_frame_t* p_frame)
+int emgl_yuv_draw(emgl_yuv_t* p_yuv, em_frame_yuv_wav_t* p_frame)
 {
     assert(NULL != p_yuv);
 
     int w = p_frame->w;
     int h = p_frame->h;
-
-    //char* ptr = KLB_MALLOC(char, w * h * 2, 0);
-    //KLB_MEMSET(ptr, 0x0, w * h * 2);
 
     emgl_program_use(p_yuv->p_prog);
 
@@ -267,10 +264,6 @@ int emgl_yuv_draw(emgl_yuv_t* p_yuv, em_yuv_frame_t* p_frame)
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
     emgl_program_validate(p_yuv->p_prog);
-
-    //p_yuv->b_update = L_FALSE;
-
-    //KLB_FREE(ptr);
 
     return 0;
 }
